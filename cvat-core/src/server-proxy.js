@@ -102,6 +102,7 @@
                 switch (error.response.status) {
                 case 401:
                     store.set("token","8c57b65d069a2cad316f015295637c244f5bfe99");
+                    location.reload();
                 }
             }
             return Promise.reject(error.response.data)   // 返回接口返回的错误信息
