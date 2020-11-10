@@ -15,9 +15,8 @@
     const store = require('store');
     const config = require('./config');
     const DownloadWorker = require('./download.worker');
-
     function getToken() {
-        return (new URLSearchParams(window.location.search)).get("token");
+        return store.get("token") ||(new URLSearchParams(window.location.search)).get("token");
     }
     function generateError(errorData) {
         if (errorData.response) {
@@ -91,12 +90,22 @@
             Axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
             Axios.defaults.xsrfCookieName = 'csrftoken';
             const workerAxios = new WorkerWrappedAxios();
-
-            let token = getToken();
-            if (token) {
-                Axios.defaults.headers.common.Authorization = `Token ${token}`;
+            
+            Axios.defaults.headers.common.Authorization = `Token ${getToken()}`;
+            //拦截器
+            Axios.interceptors.response.use(
+            response => {
+            return response
+            },
+            error => {
+            if (error.response) {
+                switch (error.response.status) {
+                case 401:
+                    store.set("token","8c57b65d069a2cad316f015295637c244f5bfe99");
+                }
             }
-
+            return Promise.reject(error.response.data)   // 返回接口返回的错误信息
+            })
             async function about() {
                 const { backendAPI } = config;
 
