@@ -282,6 +282,8 @@ function HeaderContainer(props: Props): JSX.Element {
                 )} */}
             </div>
             <div className='cvat-right-header'>
+                <Icon className='cvat-header-account-icon' component={AccountIcon} />
+                {(new URLSearchParams(window.location.search)).get("user")}
                 {/* <Button
                     className='cvat-header-button'
                     type='link'
@@ -309,7 +311,7 @@ function HeaderContainer(props: Props): JSX.Element {
                 >
                     <Icon type='question-circle' />
                     Help
-                </Button> */}
+                </Button>
                 <Dropdown overlay={menu} className='cvat-header-menu-dropdown'>
                     <span>
                         <Icon className='cvat-header-account-icon' component={AccountIcon} />
@@ -318,7 +320,7 @@ function HeaderContainer(props: Props): JSX.Element {
                         </Text>
                         <Icon className='cvat-header-menu-icon' type='caret-down' />
                     </span>
-                </Dropdown>
+                </Dropdown> */}
             </div>
             <SettingsModal visible={settingsDialogShown} onClose={() => switchSettingsDialog(false)} />
             {renderChangePasswordItem && <ChangePasswordDialog onClose={() => switchChangePasswordDialog(false)} />}
