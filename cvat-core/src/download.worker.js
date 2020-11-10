@@ -1,15 +1,24 @@
-// Copyright (C) 2019-2020 Intel Corporation
-//
-// SPDX-License-Identifier: MIT
+/*
+* Copyright (C) 2019 Intel Corporation
+* SPDX-License-Identifier: MIT
+*/
+
+/* global
+    require:false
+*/
 
 const Axios = require('axios');
-
+const store = require('store');
 Axios.defaults.withCredentials = true;
 Axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
 Axios.defaults.xsrfCookieName = 'csrftoken';
-
 onmessage = (e) => {
-    Axios.get(e.data.url, e.data.config)
+    Axios.get(e.data.url, {
+        ...e.data.config,
+        headers: {
+            'Authorization': `Token ${e.data.token}`,
+        }
+    })
         .then((response) => {
             postMessage({
                 responseData: response.data,

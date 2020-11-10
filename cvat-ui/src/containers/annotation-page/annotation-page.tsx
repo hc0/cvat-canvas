@@ -27,10 +27,10 @@ interface DispatchToProps {
     saveLogs(): void;
     closeJob(): void;
 }
-
-function mapStateToProps(state: CombinedState, own: OwnProps): StateToProps {
+const searchParams = new URLSearchParams(window.location.search);
+function mapStateToProps(state: CombinedState, own: any): StateToProps {
     const { params } = own.match;
-    const jobID = +params.jid;
+    const jobID = Number(searchParams.get("job"));
     const {
         annotation: {
             job: { requestedId, instance: job, fetching },
@@ -45,14 +45,12 @@ function mapStateToProps(state: CombinedState, own: OwnProps): StateToProps {
     };
 }
 
-function mapDispatchToProps(dispatch: any, own: OwnProps): DispatchToProps {
+function mapDispatchToProps(dispatch: any, own: any): DispatchToProps {
     const { params } = own.match;
-    const taskID = +params.tid;
-    const jobID = +params.jid;
-    const searchParams = new URLSearchParams(window.location.search);
+    const taskID = Number(searchParams.get("task"));
+    const jobID = Number(searchParams.get("job"));
     const initialFilters: string[] = [];
     let initialFrame = 0;
-
     if (searchParams.has('frame')) {
         const searchFrame = +(searchParams.get('frame') as string);
         if (!Number.isNaN(searchFrame)) {

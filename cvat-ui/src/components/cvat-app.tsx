@@ -296,53 +296,54 @@ class CVATApplication extends React.PureComponent<CVATAppProps & RouteComponentP
         }
 
         if (readyForRender) {
-            if (user && user.isVerified) {
-                return (
-                    <GlobalErrorBoundary>
-                        <Layout>
-                            <Header />
-                            <Layout.Content style={{ height: '100%' }}>
-                                <ShorcutsDialog />
-                                <GlobalHotKeys keyMap={subKeyMap} handlers={handlers}>
-                                    <Switch>
-                                        <Route exact path='/tasks' component={TasksPageContainer} />
+            // if (user && user.isVerified) {
+            return (
+                <GlobalErrorBoundary>
+                    <Layout>
+                        <Header />
+                        <Layout.Content style={{ height: '100%' }}>
+                            <ShorcutsDialog />
+                            <GlobalHotKeys keyMap={subKeyMap} handlers={handlers}>
+                                <Switch>
+                                    {/* <Route exact path='/tasks' component={TasksPageContainer} />
                                         <Route exact path='/tasks/create' component={CreateTaskPageContainer} />
                                         <Route exact path='/tasks/:id' component={TaskPageContainer} />
                                         <Route exact path='/tasks/:tid/jobs/:jid' component={AnnotationPageContainer} />
                                         {isModelPluginActive && (
                                             <Route exact path='/models' component={ModelsPageContainer} />
                                         )}
-                                        <Redirect push to='/tasks' />
-                                    </Switch>
-                                </GlobalHotKeys>
-                                {/* eslint-disable-next-line */}
-                                <a id='downloadAnchor' style={{ display: 'none' }} download />
-                            </Layout.Content>
-                        </Layout>
-                    </GlobalErrorBoundary>
-                );
-            }
-
-            return (
-                <GlobalErrorBoundary>
-                    <Switch>
-                        <Route exact path='/auth/register' component={RegisterPageContainer} />
-                        <Route exact path='/auth/login' component={LoginPageContainer} />
-                        <Route
-                            exact
-                            path='/auth/login-with-token/:sessionId/:token'
-                            component={LoginWithTokenComponent}
-                        />
-                        <Route exact path='/auth/password/reset' component={ResetPasswordPageComponent} />
-                        <Route
-                            exact
-                            path='/auth/password/reset/confirm'
-                            component={ResetPasswordPageConfirmComponent}
-                        />
-                        <Redirect to='/auth/login' />
-                    </Switch>
+                                        <Redirect push to='/tasks' /> */}
+                                    <Route exact path='/tasks/jobs' component={AnnotationPageContainer} />
+                                </Switch>
+                            </GlobalHotKeys>
+                            {/* eslint-disable-next-line */}
+                            {/* <a id='downloadAnchor' style={{ display: 'none' }} download /> */}
+                        </Layout.Content>
+                    </Layout>
                 </GlobalErrorBoundary>
             );
+            // }
+
+            // return (
+            //     <GlobalErrorBoundary>
+            //         <Switch>
+            //             <Route exact path='/auth/register' component={RegisterPageContainer} />
+            //             <Route exact path='/auth/login' component={LoginPageContainer} />
+            //             <Route
+            //                 exact
+            //                 path='/auth/login-with-token/:sessionId/:token'
+            //                 component={LoginWithTokenComponent}
+            //             />
+            //             <Route exact path='/auth/password/reset' component={ResetPasswordPageComponent} />
+            //             <Route
+            //                 exact
+            //                 path='/auth/password/reset/confirm'
+            //                 component={ResetPasswordPageConfirmComponent}
+            //             />
+            //             <Redirect to='/auth/login' />
+            //         </Switch>
+            //     </GlobalErrorBoundary>
+            // );
         }
 
         return <Spin size='large' className='cvat-spinner' />;

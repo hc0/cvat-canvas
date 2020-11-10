@@ -6,7 +6,10 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cvat-canvas": "file:cvat-canvas",
+    "cvat-core": "file:cvat-core"
+  },
   "devDependencies": {
     "@istanbuljs/nyc-config-babel": "^1.0.1",
     "babel-plugin-istanbul": "^6.0.0",
