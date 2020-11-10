@@ -238,7 +238,7 @@ function HeaderContainer(props: Props): JSX.Element {
             <div className='cvat-left-header'>
                 <Icon className='cvat-logo-icon' component={CVATLogo} />
 
-                <Button
+                {/* <Button
                     className='cvat-header-button'
                     type='link'
                     value='tasks'
@@ -279,10 +279,10 @@ function HeaderContainer(props: Props): JSX.Element {
                     >
                         Analytics
                     </Button>
-                )}
+                )} */}
             </div>
             <div className='cvat-right-header'>
-                <Button
+                {/* <Button
                     className='cvat-header-button'
                     type='link'
                     href={GITHUB_URL}
@@ -309,7 +309,7 @@ function HeaderContainer(props: Props): JSX.Element {
                 >
                     <Icon type='question-circle' />
                     Help
-                </Button>
+                </Button> */}
                 <Dropdown overlay={menu} className='cvat-header-menu-dropdown'>
                     <span>
                         <Icon className='cvat-header-account-icon' component={AccountIcon} />

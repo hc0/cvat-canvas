@@ -42,12 +42,12 @@ function LeftGroup(props: Props): JSX.Element {
 
     return (
         <Col className='cvat-annotation-header-left-group'>
-            <Dropdown overlay={<AnnotationMenuContainer />}>
+            {/* <Dropdown overlay={<AnnotationMenuContainer />}>
                 <Button type='link' className='cvat-annotation-header-button'>
                     <Icon component={MainMenuIcon} />
                     Menu
                 </Button>
-            </Dropdown>
+            </Dropdown> */}
             <Button
                 title={`Save current changes ${saveShortcut}`}
                 onClick={saving ? undefined : onSaveAnnotation}
