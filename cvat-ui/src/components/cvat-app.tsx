@@ -9,11 +9,11 @@ import Modal from 'antd/lib/modal';
 import notification from 'antd/lib/notification';
 import Spin from 'antd/lib/spin';
 import Text from 'antd/lib/typography/Text';
-import GlobalErrorBoundary from 'components/global-error-boundary/global-error-boundary';
+// import GlobalErrorBoundary from 'components/global-error-boundary/global-error-boundary';
 import Header from 'components/header/header';
 import ResetPasswordPageConfirmComponent from 'components/reset-password-confirm-page/reset-password-confirm-page';
 import ResetPasswordPageComponent from 'components/reset-password-page/reset-password-page';
-import ShorcutsDialog from 'components/shortcuts-dialog/shortcuts-dialog';
+// import ShorcutsDialog from 'components/shortcuts-dialog/shortcuts-dialog';
 import LoginWithTokenComponent from 'components/login-with-token/login-with-token';
 import AnnotationPageContainer from 'containers/annotation-page/annotation-page';
 import CreateTaskPageContainer from 'containers/create-task-page/create-task-page';
@@ -298,11 +298,11 @@ class CVATApplication extends React.PureComponent<CVATAppProps & RouteComponentP
         if (readyForRender) {
             // if (user && user.isVerified) {
             return (
-                <GlobalErrorBoundary>
+                // <GlobalErrorBoundary>
                     <Layout>
                         <Header />
                         <Layout.Content style={{ height: '100%' }}>
-                            <ShorcutsDialog />
+                            {/* <ShorcutsDialog /> */}
                             <GlobalHotKeys keyMap={subKeyMap} handlers={handlers}>
                                 <Switch>
                                     {/* <Route exact path='/tasks' component={TasksPageContainer} />
@@ -320,7 +320,7 @@ class CVATApplication extends React.PureComponent<CVATAppProps & RouteComponentP
                             {/* <a id='downloadAnchor' style={{ display: 'none' }} download /> */}
                         </Layout.Content>
                     </Layout>
-                </GlobalErrorBoundary>
+                // </GlobalErrorBoundary>
             );
             // }
 

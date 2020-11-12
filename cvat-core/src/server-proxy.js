@@ -101,7 +101,7 @@
             if (error.response) {
                 switch (error.response.status) {
                 case 401:
-                    store.set("token","8c57b65d069a2cad316f015295637c244f5bfe99");
+                        store.set("token","c6a87f99f0bfea22372e1b1f176bb21b83b0ee13");
                     location.reload();
                 }
             }
