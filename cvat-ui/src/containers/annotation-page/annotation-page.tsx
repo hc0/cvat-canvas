@@ -72,6 +72,7 @@ function mapDispatchToProps(dispatch: any, own: any): DispatchToProps {
 
     return {
         getJob(): void {
+            console.log(taskID, jobID, initialFrame, initialFilters,'taskID, jobID, initialFrame, initialFilters')
             dispatch(getJobAsync(taskID, jobID, initialFrame, initialFilters));
         },
         saveLogs(): void {
