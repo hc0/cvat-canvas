@@ -100,8 +100,12 @@
             error => {
             if (error.response) {
                 switch (error.response.status) {
-                case 401:
-                        store.set("token","c6a87f99f0bfea22372e1b1f176bb21b83b0ee13");
+                    case 401:
+                        store.remove("token");
+                        store.set(
+                          "token",
+                          "cf093b994f74e924e550e9d9c31dacae38418479"
+                        );
                     location.reload();
                 }
             }
