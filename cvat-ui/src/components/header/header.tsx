@@ -17,6 +17,7 @@ import Text from 'antd/lib/typography/Text';
 
 import getCore from 'cvat-core-wrapper';
 import consts from 'consts';
+import LogoImg from '../../assets/imgs/logo.png';
 
 import { CVATLogo, AccountIcon } from 'icons';
 // import ChangePasswordDialog from 'components/change-password-modal/change-password-modal';
@@ -120,15 +121,17 @@ function mapDispatchToProps(dispatch: any): DispatchToProps {
 type Props = StateToProps & DispatchToProps;
 
 function HeaderContainer(props: Props): JSX.Element {
+    
     return (
         <Layout.Header className='cvat-header'>
             <div className='cvat-left-header'>
-                <Icon className='cvat-logo-icon' component={CVATLogo} />
+                {/* <Icon className='cvat-logo-icon' component={CVATLogo} /> */}
+                <img src={LogoImg} alt="" className='cvat-logo-img'/>
             </div>
-            <div className='cvat-right-header'>
+            {/* <div className='cvat-right-header'>
                 <Icon className='cvat-header-account-icon' component={AccountIcon} />
                 {(new URLSearchParams(window.location.search)).get("user")}
-            </div>
+            </div> */}
         </Layout.Header>
     );
 }

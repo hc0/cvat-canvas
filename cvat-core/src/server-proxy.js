@@ -106,7 +106,7 @@
                           "token",
                           "cf093b994f74e924e550e9d9c31dacae38418479"
                         );
-                    location.reload();
+                    // location.reload();
                 }
             }
             return Promise.reject(error.response.data)   // 返回接口返回的错误信息

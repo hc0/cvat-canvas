@@ -4,14 +4,14 @@
 
 $grid-unit-size: 8px;
 
-$header-height: $grid-unit-size * 7;
+$header-height: 60px;
 
 $layout-sm-grid-size: $grid-unit-size / 2;
 $layout-lg-grid-size: $grid-unit-size * 2;
 $layout-sm-grid-color: rgba(0, 0, 0, 0.15);
 $layout-lg-grid-color: rgba(0, 0, 0, 0.15);
 
-$header-color: #d8d8d8;
+$header-color: #0067B4;
 $text-color: #303030;
 $hover-menu-color: rgba(24, 144, 255, 0.05);
 $completed-progress-color: #61c200;
