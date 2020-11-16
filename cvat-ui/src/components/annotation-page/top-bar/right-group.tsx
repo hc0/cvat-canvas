@@ -36,11 +36,11 @@ function RightGroup(props: Props): JSX.Element {
                 }}
             >
                 <Icon component={FullscreenIcon} />
-                Fullscreen
+                全屏
             </Button>
             <Button type='link' className='cvat-annotation-header-button' onClick={showStatistics}>
                 <Icon component={InfoIcon} />
-                Info
+                信息
             </Button>
             <div>
                 <Select className='cvat-workspace-selector' onChange={changeWorkspace} value={workspace}>

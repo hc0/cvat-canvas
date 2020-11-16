@@ -112,7 +112,7 @@ function ObjectsSideBar(props: StateToProps & DispatchToProps): JSX.Element {
                     ant-layout-sider-zero-width-trigger-left`}
                 onClick={collapseSidebar}
             >
-                {sidebarCollapsed ? <Icon type='menu-fold' title='Show' /> : <Icon type='menu-unfold' title='Hide' />}
+                {sidebarCollapsed ? <Icon type='menu-fold' title='显示' /> : <Icon type='menu-unfold' title='隐藏' />}
             </span>
 
             <Tabs type='card' defaultActiveKey='objects' className='cvat-objects-sidebar-tabs'>

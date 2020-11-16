@@ -26,7 +26,7 @@ function RotateControl(props: Props): JSX.Element {
             content={
                 <>
                     <Tooltip
-                        title={`Rotate the image anticlockwise ${anticlockwiseShortcut}`}
+                        title={`逆时针旋转图像 ${anticlockwiseShortcut}`}
                         placement='topRight'
                         mouseLeaveDelay={0}
                     >
@@ -37,7 +37,7 @@ function RotateControl(props: Props): JSX.Element {
                         />
                     </Tooltip>
                     <Tooltip
-                        title={`Rotate the image clockwise ${clockwiseShortcut}`}
+                        title={`顺时针旋转图像 ${clockwiseShortcut}`}
                         placement='topRight'
                         mouseLeaveDelay={0}
                     >

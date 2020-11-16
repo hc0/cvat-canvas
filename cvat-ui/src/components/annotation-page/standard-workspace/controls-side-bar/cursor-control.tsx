@@ -20,7 +20,7 @@ function CursorControl(props: Props): JSX.Element {
     const { canvasInstance, activeControl, cursorShortkey } = props;
 
     return (
-        <Tooltip title={`Cursor ${cursorShortkey}`} placement='right' mouseLeaveDelay={0}>
+        <Tooltip title={`光标 ${cursorShortkey}`} placement='right' mouseLeaveDelay={0}>
             <Icon
                 component={CursorIcon}
                 className={

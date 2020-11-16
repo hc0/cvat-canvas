@@ -59,7 +59,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
             </Row>
             <Row type='flex' justify='start'>
                 <Col>
-                    <Text className='cvat-text-color'>Label</Text>
+                    <Text className='cvat-text-color'>标签</Text>
                 </Col>
             </Row>
             <Row type='flex' justify='center'>
@@ -100,10 +100,10 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                                 onChange={onChangeRectDrawingMethod}
                             >
                                 <Radio value={RectDrawingMethod.CLASSIC} style={{ width: 'auto' }}>
-                                    By 2 Points
+                                2点定位
                                 </Radio>
                                 <Radio value={RectDrawingMethod.EXTREME_POINTS} style={{ width: 'auto' }}>
-                                    By 4 Points
+                                4点定位
                                 </Radio>
                             </Radio.Group>
                         </Col>

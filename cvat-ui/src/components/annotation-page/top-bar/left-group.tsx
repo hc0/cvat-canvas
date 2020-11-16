@@ -55,7 +55,7 @@ function LeftGroup(props: Props): JSX.Element {
                 className={saving ? 'cvat-annotation-disabled-header-button' : 'cvat-annotation-header-button'}
             >
                 <Icon component={SaveIcon} />
-                {saving ? 'Saving...' : 'Save'}
+                {saving ? '保存中...' : '保存'}
                 <Modal title='Saving changes on the server' visible={saving} footer={[]} closable={false}>
                     <Timeline pending={savingStatuses[savingStatuses.length - 1] || 'Pending..'}>
                         {savingStatuses.slice(0, -1).map((status: string, id: number) => (
@@ -65,7 +65,7 @@ function LeftGroup(props: Props): JSX.Element {
                 </Modal>
             </Button>
             <Button
-                title={`Undo: ${undoAction} ${undoShortcut}`}
+                title={`撤销: ${undoAction} ${undoShortcut}`}
                 disabled={!undoAction}
                 style={{ pointerEvents: undoAction ? 'initial' : 'none', opacity: undoAction ? 1 : 0.5 }}
                 type='link'
@@ -73,10 +73,10 @@ function LeftGroup(props: Props): JSX.Element {
                 onClick={onUndoClick}
             >
                 <Icon component={UndoIcon} />
-                <span>Undo</span>
+                <span>撤销</span>
             </Button>
             <Button
-                title={`Redo: ${redoAction} ${redoShortcut}`}
+                title={`恢复: ${redoAction} ${redoShortcut}`}
                 disabled={!redoAction}
                 style={{ pointerEvents: redoAction ? 'initial' : 'none', opacity: redoAction ? 1 : 0.5 }}
                 type='link'
@@ -84,7 +84,7 @@ function LeftGroup(props: Props): JSX.Element {
                 onClick={onRedoClick}
             >
                 <Icon component={RedoIcon} />
-                Redo
+                恢复
             </Button>
         </Col>
     );

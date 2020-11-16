@@ -19,7 +19,7 @@ function ResizeControl(props: Props): JSX.Element {
     const { activeControl, canvasInstance } = props;
 
     return (
-        <Tooltip title='Select a region of interest' placement='right' mouseLeaveDelay={0}>
+        <Tooltip title='选择区域' placement='right' mouseLeaveDelay={0}>
             <Icon
                 component={ZoomIcon}
                 className={
