@@ -67,14 +67,14 @@ function PlayerNavigation(props: Props): JSX.Element {
                         </Tooltip>
                     </Col>
                     <Col offset={1}>
-                        <Tooltip title='Create frame URL' mouseLeaveDelay={0}>
+                        <Tooltip title='创建帧 URL' mouseLeaveDelay={0}>
                             <Icon className='cvat-player-frame-url-icon' type='link' onClick={onURLIconClick} />
                         </Tooltip>
                     </Col>
                 </Row>
             </Col>
             <Col>
-                <Tooltip title={`Press ${focusFrameInputShortcut} to focus here`} mouseLeaveDelay={0}>
+                <Tooltip title={`按 ${focusFrameInputShortcut} 输入`} mouseLeaveDelay={0}>
                     <InputNumber
                         className='cvat-player-frame-selector'
                         type='number'

@@ -408,9 +408,9 @@ export interface AnnotationState {
 }
 
 export enum Workspace {
-    STANDARD = 'Standard',
-    ATTRIBUTE_ANNOTATION = 'Attribute annotation',
-    TAG_ANNOTATION = 'Tag annotation',
+    STANDARD = '标准',
+    ATTRIBUTE_ANNOTATION = '属性注释 ',
+    TAG_ANNOTATION = '标签注释',
 }
 
 export enum GridColor {

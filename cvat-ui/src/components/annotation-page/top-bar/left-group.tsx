@@ -39,6 +39,7 @@ function LeftGroup(props: Props): JSX.Element {
         onUndoClick,
         onRedoClick,
     } = props;
+    console.log(savingStatuses,'d')
 
     return (
         <Col className='cvat-annotation-header-left-group'>
@@ -49,7 +50,7 @@ function LeftGroup(props: Props): JSX.Element {
                 </Button>
             </Dropdown> */}
             <Button
-                title={`Save current changes ${saveShortcut}`}
+                title={`保存当前更改 ${saveShortcut}`}
                 onClick={saving ? undefined : onSaveAnnotation}
                 type='link'
                 className={saving ? 'cvat-annotation-disabled-header-button' : 'cvat-annotation-header-button'}
