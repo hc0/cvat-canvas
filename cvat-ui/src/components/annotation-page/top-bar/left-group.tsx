@@ -39,7 +39,6 @@ function LeftGroup(props: Props): JSX.Element {
         onUndoClick,
         onRedoClick,
     } = props;
-    console.log(savingStatuses,'d')
 
     return (
         <Col className='cvat-annotation-header-left-group'>

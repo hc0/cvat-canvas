@@ -64,7 +64,6 @@ function PlayerButtons(props: Props): JSX.Element {
         setPrevButton,
         setNextButton,
     } = props;
-    console.log(props,'1-')
 
     const prevRegularText = '返回';
     const prevFilteredText = 'Go back with a filter';

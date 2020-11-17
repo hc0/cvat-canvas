@@ -25,13 +25,13 @@ function SetupTagPopover(props: Props): JSX.Element {
             <Row type='flex' justify='start'>
                 <Col>
                     <Text className='cvat-text-color' strong>
-                        Setup tag
+                    设置标签
                     </Text>
                 </Col>
             </Row>
             <Row type='flex' justify='start'>
                 <Col>
-                    <Text className='cvat-text-color'>Label</Text>
+                    <Text className='cvat-text-color'>标签</Text>
                 </Col>
             </Row>
             <Row type='flex' justify='center'>
@@ -47,8 +47,8 @@ function SetupTagPopover(props: Props): JSX.Element {
             </Row>
             <Row type='flex' justify='space-around'>
                 <Col span={24}>
-                    <Tooltip title={`Press ${repeatShapeShortcut} to add a tag again`} mouseLeaveDelay={0}>
-                        <Button onClick={() => onSetup(selectedLabeID)}>Tag</Button>
+                    <Tooltip title={`按 ${repeatShapeShortcut} 添加标签`} mouseLeaveDelay={0}>
+                        <Button onClick={() => onSetup(selectedLabeID)}>标签</Button>
                     </Tooltip>
                 </Col>
             </Row>

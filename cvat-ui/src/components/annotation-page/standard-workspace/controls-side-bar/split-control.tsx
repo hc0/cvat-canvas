@@ -39,7 +39,7 @@ function SplitControl(props: Props): JSX.Element {
               };
 
     return (
-        <Tooltip title={`Split a track ${switchSplitShortcut}`} placement='right' mouseLeaveDelay={0}>
+        <Tooltip title={`轨迹分割 ${switchSplitShortcut}`} placement='right' mouseLeaveDelay={0}>
             <Icon {...dynamicIconProps} component={SplitIcon} />
         </Tooltip>
     );

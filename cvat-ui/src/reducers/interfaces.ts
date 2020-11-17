@@ -295,6 +295,14 @@ export enum ShapeType {
     POINTS = 'points',
     CUBOID = 'cuboid',
 }
+export enum ShapeTypeText {
+    rectangle = '矩形',
+    polygon = '多边形',
+    polyline = '折线',
+    points = '点',
+    cuboid = '立方体',
+}
+
 
 export enum ObjectType {
     SHAPE = 'shape',

@@ -39,7 +39,7 @@ function MergeControl(props: Props): JSX.Element {
               };
 
     return (
-        <Tooltip title={`Merge shapes/tracks ${switchMergeShortcut}`} placement='right' mouseLeaveDelay={0}>
+        <Tooltip title={`合并形状/轨迹 ${switchMergeShortcut}`} placement='right' mouseLeaveDelay={0}>
             <Icon {...dynamicIconProps} component={MergeIcon} />
         </Tooltip>
     );

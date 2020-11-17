@@ -40,7 +40,7 @@ function GroupControl(props: Props): JSX.Element {
               };
 
     const title =
-        `Group shapes/tracks ${switchGroupShortcut}.` + ` Select and press ${resetGroupShortcut} to reset a group`;
+        `形状/轨迹 ${switchGroupShortcut}分组.` + ` 按 ${resetGroupShortcut} 设置分组`;
     return (
         <Tooltip title={title} placement='right' mouseLeaveDelay={0}>
             <Icon {...dynamicIconProps} component={GroupIcon} />

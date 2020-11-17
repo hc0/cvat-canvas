@@ -12,7 +12,7 @@ import Tooltip from 'antd/lib/tooltip';
 import Text from 'antd/lib/typography/Text';
 
 import { RectDrawingMethod, CuboidDrawingMethod } from 'cvat-canvas-wrapper';
-import { ShapeType } from 'reducers/interfaces';
+import { ShapeType, ShapeTypeText } from 'reducers/interfaces';
 import { clamp } from 'utils/math';
 
 interface Props {
@@ -54,7 +54,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
         <div className='cvat-draw-shape-popover-content'>
             <Row type='flex' justify='start'>
                 <Col>
-                    <Text className='cvat-text-color' strong>{`Draw new ${shapeType}`}</Text>
+                    <Text className='cvat-text-color' strong>{`绘制 ${ShapeTypeText[shapeType]}`}</Text>
                 </Col>
             </Row>
             <Row type='flex' justify='start'>
@@ -89,7 +89,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                 <>
                     <Row>
                         <Col>
-                            <Text className='cvat-text-color'> Drawing method </Text>
+                            <Text className='cvat-text-color'> 画图方式 </Text>
                         </Col>
                     </Row>
                     <Row type='flex' justify='space-around'>
@@ -114,7 +114,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                 <>
                     <Row>
                         <Col>
-                            <Text className='cvat-text-color'> Drawing method </Text>
+                            <Text className='cvat-text-color'> 画图方式 </Text>
                         </Col>
                     </Row>
                     <Row type='flex' justify='space-around'>
@@ -125,10 +125,10 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                                 onChange={onChangeCuboidDrawingMethod}
                             >
                                 <Radio value={CuboidDrawingMethod.CLASSIC} style={{ width: 'auto' }}>
-                                    From rectangle
+                                矩形绘制
                                 </Radio>
                                 <Radio value={CuboidDrawingMethod.CORNER_POINTS} style={{ width: 'auto' }}>
-                                    By 4 Points
+                                4点绘制
                                 </Radio>
                             </Radio.Group>
                         </Col>
@@ -138,7 +138,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
             {shapeType !== ShapeType.RECTANGLE && shapeType !== ShapeType.CUBOID && (
                 <Row type='flex' justify='space-around' align='middle'>
                     <Col span={14}>
-                        <Text className='cvat-text-color'> Number of points: </Text>
+                        <Text className='cvat-text-color'> 输入点数: </Text>
                     </Col>
                     <Col span={10}>
                         <InputNumber
@@ -159,13 +159,13 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
             )}
             <Row type='flex' justify='space-around'>
                 <Col span={12}>
-                    <Tooltip title={`Press ${repeatShapeShortcut} to draw again`} mouseLeaveDelay={0}>
-                        <Button onClick={onDrawShape}>Shape</Button>
+                    <Tooltip title={`按 ${repeatShapeShortcut} 再次绘制`} mouseLeaveDelay={0}>
+                        <Button onClick={onDrawShape}>形状</Button>
                     </Tooltip>
                 </Col>
                 <Col span={12}>
-                    <Tooltip title={`Press ${repeatShapeShortcut} to draw again`} mouseLeaveDelay={0}>
-                        <Button onClick={onDrawTrack}>Track</Button>
+                    <Tooltip title={`按 ${repeatShapeShortcut} 再次绘制`} mouseLeaveDelay={0}>
+                        <Button onClick={onDrawTrack}>轨迹</Button>
                     </Tooltip>
                 </Col>
             </Row>
