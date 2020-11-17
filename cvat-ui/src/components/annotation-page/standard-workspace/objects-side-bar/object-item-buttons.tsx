@@ -148,7 +148,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                         </Col>
                         <Col>
                             {navigatePrevKeyframe ? (
-                                <Tooltip title={`Go to previous keyframe ${prevKeyFrameShortcut}`} mouseLeaveDelay={0}>
+                                <Tooltip title={`转到上一个关键帧 ${prevKeyFrameShortcut}`} mouseLeaveDelay={0}>
                                     <Icon
                                         {...classes.prevKeyFrame}
                                         component={PreviousIcon}
@@ -165,7 +165,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                         </Col>
                         <Col>
                             {navigateNextKeyframe ? (
-                                <Tooltip title={`Go to next keyframe ${nextKeyFrameShortcut}`} mouseLeaveDelay={0}>
+                                <Tooltip title={`转到下一个关键帧 ${nextKeyFrameShortcut}`} mouseLeaveDelay={0}>
                                     <Icon
                                         {...classes.nextKeyFrame}
                                         component={NextIcon}
@@ -194,7 +194,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                     </Row>
                     <Row type='flex' justify='space-around'>
                         <Col>
-                            <Tooltip title={`Switch outside property ${switchOutsideShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`切换外部属性 ${switchOutsideShortcut}`} mouseLeaveDelay={0}>
                                 {outside ? (
                                     <Icon
                                         {...classes.outside.enabled}
@@ -213,7 +213,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                             </Tooltip>
                         </Col>
                         <Col>
-                            <Tooltip title={`Switch lock property ${switchLockShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`切换锁定属性 ${switchLockShortcut}`} mouseLeaveDelay={0}>
                                 {locked ? (
                                     <Icon {...classes.lock.enabled} type='lock' theme='filled' onClick={unlock} />
                                 ) : (
@@ -222,7 +222,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                             </Tooltip>
                         </Col>
                         <Col>
-                            <Tooltip title={`Switch occluded property ${switchOccludedShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`切换遮挡属性 ${switchOccludedShortcut}`} mouseLeaveDelay={0}>
                                 {occluded ? (
                                     <Icon {...classes.occluded.enabled} type='team' onClick={unsetOccluded} />
                                 ) : (
@@ -231,7 +231,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                             </Tooltip>
                         </Col>
                         <Col>
-                            <Tooltip title={`Switch hidden property ${switchHiddenShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`切换隐藏属性  ${switchHiddenShortcut}`} mouseLeaveDelay={0}>
                                 {hidden ? (
                                     <Icon
                                         {...classes.hidden.enabled}
@@ -246,7 +246,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                             </Tooltip>
                         </Col>
                         <Col>
-                            <Tooltip title={`Switch keyframe property ${switchKeyFrameShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`切换关键帧属性 ${switchKeyFrameShortcut}`} mouseLeaveDelay={0}>
                                 {keyframe ? (
                                     <Icon
                                         {...classes.keyframe.enabled}
@@ -267,7 +267,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                         </Col>
                         {shapeType !== ShapeType.POINTS && (
                             <Col>
-                                <Tooltip title='Switch pinned property' mouseLeaveDelay={0}>
+                                <Tooltip title='切换固定属性' mouseLeaveDelay={0}>
                                     {pinned ? (
                                         <Icon
                                             {...classes.pinned.enabled}
@@ -293,7 +293,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                 <Col span={20} style={{ textAlign: 'center' }}>
                     <Row type='flex' justify='space-around'>
                         <Col>
-                            <Tooltip title={`Switch lock property ${switchLockShortcut}`} mouseLeaveDelay={0}>
+                            <Tooltip title={`锁定属性 ${switchLockShortcut}`} mouseLeaveDelay={0}>
                                 {locked ? (
                                     <Icon {...classes.lock.enabled} type='lock' onClick={unlock} theme='filled' />
                                 ) : (
@@ -312,7 +312,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
             <Col span={20} style={{ textAlign: 'center' }}>
                 <Row type='flex' justify='space-around'>
                     <Col>
-                        <Tooltip title={`Switch lock property ${switchLockShortcut}`} mouseLeaveDelay={0}>
+                        <Tooltip title={`锁定属性 ${switchLockShortcut}`} mouseLeaveDelay={0}>
                             {locked ? (
                                 <Icon {...classes.lock.enabled} type='lock' onClick={unlock} theme='filled' />
                             ) : (
@@ -321,7 +321,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                         </Tooltip>
                     </Col>
                     <Col>
-                        <Tooltip title={`Switch occluded property ${switchOccludedShortcut}`} mouseLeaveDelay={0}>
+                        <Tooltip title={`切换遮挡属性 ${switchOccludedShortcut}`} mouseLeaveDelay={0}>
                             {occluded ? (
                                 <Icon {...classes.occluded.enabled} type='team' onClick={unsetOccluded} />
                             ) : (
@@ -330,7 +330,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                         </Tooltip>
                     </Col>
                     <Col>
-                        <Tooltip title={`Switch hidden property ${switchHiddenShortcut}`} mouseLeaveDelay={0}>
+                        <Tooltip title={`切换隐藏属性 ${switchHiddenShortcut}`} mouseLeaveDelay={0}>
                             {hidden ? (
                                 <Icon {...classes.hidden.enabled} type='eye-invisible' onClick={show} />
                             ) : (
@@ -340,7 +340,7 @@ function ItemButtonsComponent(props: Props): JSX.Element {
                     </Col>
                     {shapeType !== ShapeType.POINTS && (
                         <Col>
-                            <Tooltip title='Switch pinned property' mouseLeaveDelay={0}>
+                            <Tooltip title='切换固定属性' mouseLeaveDelay={0}>
                                 {pinned ? (
                                     <Icon {...classes.pinned.enabled} type='pushpin' theme='filled' onClick={unpin} />
                                 ) : (

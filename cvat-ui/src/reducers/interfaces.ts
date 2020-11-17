@@ -302,6 +302,20 @@ export enum ShapeTypeText {
     points = '点',
     cuboid = '立方体',
 }
+export enum ShapeTypeText2 {
+    'RECTANGLE SHAPE' = '矩形',
+    'POLYGON SHAPE' = '多边形',
+    'POLYLINE SHAPE' = '绘制折线',
+    'CUBOID SHAPE' = '立方体',
+
+    'RECTANGLE TRACK' = '矩形轨迹',
+    'POLYGON TRACK' = '多边形轨迹',
+    'POLYLINE TRACK' = '折线轨迹',
+    'CUBOID TRACK' = '立方体轨迹',
+
+    'TAG' = '标签',
+
+}
 
 
 export enum ObjectType {
@@ -442,6 +456,11 @@ export enum ColorBy {
     INSTANCE = 'Instance',
     GROUP = 'Group',
     LABEL = 'Label',
+}
+export enum ColorByText {
+    Instance = '距离',
+    Group = '分组',
+    Label = '标签',
 }
 
 export interface PlayerSettingsState {

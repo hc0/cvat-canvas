@@ -22,16 +22,16 @@ function StatesOrderingSelectorComponent(props: StatesOrderingSelectorComponentP
 
     return (
         <Col span={16}>
-            <Text strong>Sort by</Text>
+            <Text strong>排序方式</Text>
             <Select value={statesOrdering} onChange={changeStatesOrdering}>
                 <Select.Option key={StatesOrdering.ID_DESCENT} value={StatesOrdering.ID_DESCENT}>
-                    {StatesOrdering.ID_DESCENT}
+                    降序
                 </Select.Option>
                 <Select.Option key={StatesOrdering.ID_ASCENT} value={StatesOrdering.ID_ASCENT}>
-                    {StatesOrdering.ID_ASCENT}
+                    升序
                 </Select.Option>
                 <Select.Option key={StatesOrdering.UPDATED} value={StatesOrdering.UPDATED}>
-                    {StatesOrdering.UPDATED}
+                    更新时间
                 </Select.Option>
             </Select>
         </Col>
@@ -82,7 +82,7 @@ function ObjectListHeader(props: Props): JSX.Element {
             </Row>
             <Row type='flex' justify='space-between' align='middle'>
                 <Col span={2}>
-                    <Tooltip title={`Switch lock property for all ${switchLockAllShortcut}`} mouseLeaveDelay={0}>
+                    <Tooltip title={`锁定所有属性 ${switchLockAllShortcut}`} mouseLeaveDelay={0}>
                         {statesLocked ? (
                             <Icon type='lock' onClick={unlockAllStates} theme='filled' />
                         ) : (
@@ -91,7 +91,7 @@ function ObjectListHeader(props: Props): JSX.Element {
                     </Tooltip>
                 </Col>
                 <Col span={2}>
-                    <Tooltip title={`Switch hidden property for all ${switchHiddenAllShortcut}`} mouseLeaveDelay={0}>
+                    <Tooltip title={`隐藏所有属性 ${switchHiddenAllShortcut}`} mouseLeaveDelay={0}>
                         {statesHidden ? (
                             <Icon type='eye-invisible' onClick={showAllStates} />
                         ) : (
@@ -100,7 +100,7 @@ function ObjectListHeader(props: Props): JSX.Element {
                     </Tooltip>
                 </Col>
                 <Col span={2}>
-                    <Tooltip title='Expand/collapse all' mouseLeaveDelay={0}>
+                    <Tooltip title='全部展开/收起' mouseLeaveDelay={0}>
                         {statesCollapsed ? (
                             <Icon type='caret-down' onClick={expandAllStates} />
                         ) : (

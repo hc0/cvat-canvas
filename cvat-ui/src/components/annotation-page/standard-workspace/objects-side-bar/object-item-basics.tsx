@@ -10,7 +10,7 @@ import Dropdown from 'antd/lib/dropdown';
 import Text from 'antd/lib/typography/Text';
 import Tooltip from 'antd/lib/tooltip';
 
-import { ObjectType, ShapeType, ColorBy } from 'reducers/interfaces';
+import { ObjectType, ShapeType, ColorBy, ShapeTypeText2 } from 'reducers/interfaces';
 import ItemMenu from './object-item-menu';
 
 interface Props {
@@ -97,11 +97,11 @@ function ItemTopComponent(props: Props): JSX.Element {
                 <Text style={{ fontSize: 12 }}>{clientID}</Text>
                 <br />
                 <Text type='secondary' style={{ fontSize: 10 }}>
-                    {type}
+                    {ShapeTypeText2[type]}
                 </Text>
             </Col>
             <Col span={12}>
-                <Tooltip title='Change current label' mouseLeaveDelay={0}>
+                <Tooltip title='更改当前标签' mouseLeaveDelay={0}>
                     <Select
                         size='small'
                         value={`${labelID}`}

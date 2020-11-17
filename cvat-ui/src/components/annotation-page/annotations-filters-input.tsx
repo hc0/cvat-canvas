@@ -149,7 +149,7 @@ function AnnotationsFiltersInput(props: StateToProps & DispatchToProps): JSX.Ele
                 ) : (
                     <>
                         <Icon style={{ transform: 'scale(0.9)' }} type='filter' />
-                        <span style={{ marginLeft: 5 }}>Annotations filters</span>
+                        <span style={{ marginLeft: 5 }}>注释</span>
                     </>
                 )
             }

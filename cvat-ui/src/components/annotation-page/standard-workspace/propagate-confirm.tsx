@@ -39,15 +39,15 @@ export default function PropagateConfirmComponent(props: Props): JSX.Element {
     return (
         <Modal
             okType='primary'
-            okText='Yes'
-            cancelText='Cancel'
+            okText='是'
+            cancelText='取消'
             onOk={propagateObject}
             onCancel={cancel}
-            title='Confirm propagation'
+            title='确认传送'
             visible={visible}
         >
             <div className='cvat-propagate-confirm'>
-                <Text>Do you want to make a copy of the object on</Text>
+                <Text>你是否要复制对象从</Text>
                 <InputNumber
                     size='small'
                     min={minPropagateFrames}
@@ -60,8 +60,8 @@ export default function PropagateConfirmComponent(props: Props): JSX.Element {
                         }
                     }}
                 />
-                {propagateFrames > 1 ? <Text> frames </Text> : <Text> frame </Text>}
-                <Text>up to the </Text>
+                {propagateFrames > 1 ? <Text> 帧 </Text> : <Text> 帧 </Text>}
+                <Text>到 </Text>
                 <InputNumber
                     size='small'
                     value={propagateUpToFrame}
@@ -73,7 +73,7 @@ export default function PropagateConfirmComponent(props: Props): JSX.Element {
                         }
                     }}
                 />
-                <Text>frame</Text>
+                <Text>帧</Text>
             </div>
         </Modal>
     );

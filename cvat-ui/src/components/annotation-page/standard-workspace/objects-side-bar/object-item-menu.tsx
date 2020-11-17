@@ -74,29 +74,29 @@ export default function ItemMenu(props: Props): JSX.Element {
         <Menu className='cvat-object-item-menu'>
             <Menu.Item>
                 <Button disabled={serverID === undefined} type='link' icon='link' onClick={createURL}>
-                    Create object URL
+                创建对象
                 </Button>
             </Menu.Item>
             <Menu.Item>
-                <Tooltip title={`${copyShortcut} and ${pasteShortcut}`} mouseLeaveDelay={0}>
+                <Tooltip title={`${copyShortcut} 和 ${pasteShortcut}`} mouseLeaveDelay={0}>
                     <Button type='link' icon='copy' onClick={copy}>
-                        Make a copy
+                    复制
                     </Button>
                 </Tooltip>
             </Menu.Item>
             <Menu.Item>
                 <Tooltip title={`${propagateShortcut}`} mouseLeaveDelay={0}>
                     <Button type='link' icon='block' onClick={propagate}>
-                        Propagate
+                    传送
                     </Button>
                 </Tooltip>
             </Menu.Item>
             {objectType === ObjectType.TRACK && shapeType === ShapeType.RECTANGLE && (
                 <Menu.Item>
-                    <Tooltip title='Run tracking with the active tracker' mouseLeaveDelay={0}>
+                    <Tooltip title='用活动器运行追踪' mouseLeaveDelay={0}>
                         <Button type='link' onClick={activateTracking}>
                             <Icon type='gateway' />
-                            Track
+                            轨迹
                         </Button>
                     </Tooltip>
                 </Menu.Item>
@@ -104,7 +104,7 @@ export default function ItemMenu(props: Props): JSX.Element {
             {[ShapeType.POLYGON, ShapeType.POLYLINE, ShapeType.CUBOID].includes(shapeType) && (
                 <Menu.Item>
                     <Button type='link' icon='retweet' onClick={switchOrientation}>
-                        Switch orientation
+                    切换方向
                     </Button>
                 </Menu.Item>
             )}
@@ -112,7 +112,7 @@ export default function ItemMenu(props: Props): JSX.Element {
                 <Menu.Item>
                     <Button type='link' onClick={resetCuboidPerspective}>
                         <Icon component={ResetPerspectiveIcon} />
-                        Reset perspective
+                        重设视角
                     </Button>
                 </Menu.Item>
             )}
@@ -121,7 +121,7 @@ export default function ItemMenu(props: Props): JSX.Element {
                     <Tooltip title={`${toBackgroundShortcut}`} mouseLeaveDelay={0}>
                         <Button type='link' onClick={toBackground}>
                             <Icon component={BackgroundIcon} />
-                            To background
+                            到背景 
                         </Button>
                     </Tooltip>
                 </Menu.Item>
@@ -131,7 +131,7 @@ export default function ItemMenu(props: Props): JSX.Element {
                     <Tooltip title={`${toForegroundShortcut}`} mouseLeaveDelay={0}>
                         <Button type='link' onClick={toForeground}>
                             <Icon component={ForegroundIcon} />
-                            To foreground
+                            到前景
                         </Button>
                     </Tooltip>
                 </Menu.Item>
@@ -162,8 +162,8 @@ export default function ItemMenu(props: Props): JSX.Element {
                         onClick={(): void => {
                             if (locked) {
                                 Modal.confirm({
-                                    title: 'Object is locked',
-                                    content: 'Are you sure you want to remove it?',
+                                    title: '目标锁定',
+                                    content: '你确定要移除?',
                                     onOk() {
                                         remove();
                                     },
@@ -173,7 +173,7 @@ export default function ItemMenu(props: Props): JSX.Element {
                             }
                         }}
                     >
-                        Remove
+                        移除
                     </Button>
                 </Tooltip>
             </Menu.Item>

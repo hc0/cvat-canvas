@@ -13,7 +13,7 @@ import Collapse from 'antd/lib/collapse';
 
 import ColorPicker from 'components/annotation-page/standard-workspace/objects-side-bar/color-picker';
 import { ColorizeIcon } from 'icons';
-import { ColorBy, CombinedState } from 'reducers/interfaces';
+import { ColorBy, CombinedState,ColorByText } from 'reducers/interfaces';
 import {
     collapseAppearance as collapseAppearanceAction,
     updateTabContentHeight as updateTabContentHeightAction,
@@ -150,17 +150,17 @@ function AppearanceBlock(props: Props): JSX.Element {
             activeKey={appearanceCollapsed ? [] : ['appearance']}
             className='cvat-objects-appearance-collapse'
         >
-            <Collapse.Panel header={<Text strong>Appearance</Text>} key='appearance'>
+            <Collapse.Panel header={<Text strong>显示</Text>} key='appearance'>
                 <div className='cvat-objects-appearance-content'>
-                    <Text type='secondary'>Color by</Text>
+                    <Text type='secondary'>涂色</Text>
                     <Radio.Group value={colorBy} onChange={changeShapesColorBy}>
-                        <Radio.Button value={ColorBy.LABEL}>{ColorBy.LABEL}</Radio.Button>
-                        <Radio.Button value={ColorBy.INSTANCE}>{ColorBy.INSTANCE}</Radio.Button>
-                        <Radio.Button value={ColorBy.GROUP}>{ColorBy.GROUP}</Radio.Button>
+                        <Radio.Button value={ColorBy.LABEL}>{ColorByText[ColorBy.LABEL]}</Radio.Button>
+                        <Radio.Button value={ColorBy.INSTANCE}>{ColorByText[ColorBy.INSTANCE]}</Radio.Button>
+                        <Radio.Button value={ColorBy.GROUP}>{ColorByText[ColorBy.GROUP]}</Radio.Button>
                     </Radio.Group>
-                    <Text type='secondary'>Opacity</Text>
+                    <Text type='secondary'>不透明度</Text>
                     <Slider onChange={changeShapesOpacity} value={opacity} min={0} max={100} />
-                    <Text type='secondary'>Selected opacity</Text>
+                    <Text type='secondary'>选择不透明度</Text>
                     <Slider onChange={changeSelectedShapesOpacity} value={selectedOpacity} min={0} max={100} />
                     <Checkbox
                         onChange={(event: CheckboxChangeEvent) => {
@@ -168,7 +168,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                         }}
                         checked={outlined}
                     >
-                        Outlined borders
+                        边框轮廓
                         <ColorPicker
                             onChange={(color) => changeShapesOutlinedBorders(outlined, color)}
                             value={outlineColor}
@@ -181,10 +181,10 @@ function AppearanceBlock(props: Props): JSX.Element {
                         </ColorPicker>
                     </Checkbox>
                     <Checkbox onChange={changeShowBitmap} checked={showBitmap}>
-                        Show bitmap
+                        显示位图 
                     </Checkbox>
                     <Checkbox onChange={changeShowProjections} checked={showProjections}>
-                        Show projections
+                        显示投影
                     </Checkbox>
                 </div>
             </Collapse.Panel>
