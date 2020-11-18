@@ -313,7 +313,7 @@ class CVATApplication extends React.PureComponent<CVATAppProps & RouteComponentP
                                             <Route exact path='/models' component={ModelsPageContainer} />
                                         )}
                                         <Redirect push to='/tasks' /> */}
-                                    <Route exact path='/tasks/jobs' component={AnnotationPageContainer} />
+                                    <Route exact path='/' component={AnnotationPageContainer} />
                                 </Switch>
                             </GlobalHotKeys>
                             {/* eslint-disable-next-line */}

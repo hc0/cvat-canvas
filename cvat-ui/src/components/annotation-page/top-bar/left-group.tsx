@@ -40,6 +40,18 @@ function LeftGroup(props: Props): JSX.Element {
         onRedoClick,
     } = props;
 
+    let mapObj:object = {
+        'Created objects are being saved on the server': '在服务器上保存创建的对象',
+        'Updated objects are being saved on the server':  '在服务器上保存更新的对象',
+        'Deleted objects are being deleted from the server':'从服务器上删除被删除的对象'
+    }
+    
+    let newSavingStatuses: any[] = savingStatuses.map((item:string)=>{
+        let list: any = mapObj[item];
+        return list;
+    })
+   
+
     return (
         <Col className='cvat-annotation-header-left-group'>
             {/* <Dropdown overlay={<AnnotationMenuContainer />}>
@@ -56,9 +68,9 @@ function LeftGroup(props: Props): JSX.Element {
             >
                 <Icon component={SaveIcon} />
                 {saving ? '保存中...' : '保存'}
-                <Modal title='Saving changes on the server' visible={saving} footer={[]} closable={false}>
-                    <Timeline pending={savingStatuses[savingStatuses.length - 1] || 'Pending..'}>
-                        {savingStatuses.slice(0, -1).map((status: string, id: number) => (
+                <Modal title='保存服务器上的更改' visible={saving} footer={[]} closable={false}>
+                    <Timeline pending={newSavingStatuses[savingStatuses.length - 1] || '等待..'}>
+                        {newSavingStatuses.slice(0, -1).map((status: string, id: number) => (
                             <Timeline.Item key={id}>{status}</Timeline.Item>
                         ))}
                     </Timeline>

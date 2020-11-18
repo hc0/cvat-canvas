@@ -73,7 +73,7 @@ function ColorPicker(props: Props, ref: React.Ref<any>): JSX.Element {
                                         changeVisible(false);
                                     }}
                                 >
-                                    Reset
+                                    重置
                                 </Button>
                             )}
                         </Col>
@@ -94,7 +94,7 @@ function ColorPicker(props: Props, ref: React.Ref<any>): JSX.Element {
                                     changeVisible(false);
                                 }}
                             >
-                                Ok
+                                确定
                             </Button>
                         </Col>
                     </Row>
@@ -103,7 +103,7 @@ function ColorPicker(props: Props, ref: React.Ref<any>): JSX.Element {
             title={
                 <Row type='flex' justify='space-between' align='middle'>
                     <Col span={12}>
-                        <Text strong>Select color</Text>
+                        <Text strong>选择颜色</Text>
                     </Col>
                     <Col span={4}>
                         <Tooltip title='Cancel'>

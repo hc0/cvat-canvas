@@ -44,6 +44,7 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
     const baseProps = {
         cancelButtonProps: { style: { display: 'none' } },
         okButtonProps: { style: { width: 100 } },
+        okText:'确定',
         onOk: closeStatistics,
         width: 1000,
         visible,
@@ -85,7 +86,7 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
     });
 
     const makeShapesTracksTitle = (title: string): JSX.Element => (
-        <Tooltip title='Shapes / Tracks' mouseLeaveDelay={0}>
+        <Tooltip title='形状 / 轨迹' mouseLeaveDelay={0}>
             <Text strong style={{ marginRight: 5 }}>
                 {title}
             </Text>
@@ -95,47 +96,47 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
 
     const columns = [
         {
-            title: <Text strong> Label </Text>,
+            title: <Text strong> 标签  </Text>,
             dataIndex: 'label',
             key: 'label',
         },
         {
-            title: makeShapesTracksTitle('Rectangle'),
+            title: makeShapesTracksTitle('矩形'),
             dataIndex: 'rectangle',
             key: 'rectangle',
         },
         {
-            title: makeShapesTracksTitle('Polygon'),
+            title: makeShapesTracksTitle('多边形'),
             dataIndex: 'polygon',
             key: 'polygon',
         },
         {
-            title: makeShapesTracksTitle('Polyline'),
+            title: makeShapesTracksTitle('折线'),
             dataIndex: 'polyline',
             key: 'polyline',
         },
         {
-            title: makeShapesTracksTitle('Points'),
+            title: makeShapesTracksTitle('点'),
             dataIndex: 'points',
             key: 'points',
         },
         {
-            title: <Text strong> Tags </Text>,
+            title: <Text strong> 标签 </Text>,
             dataIndex: 'tags',
             key: 'tags',
         },
         {
-            title: <Text strong> Manually </Text>,
+            title: <Text strong> 手动 </Text>,
             dataIndex: 'manually',
             key: 'manually',
         },
         {
-            title: <Text strong> Interpolated </Text>,
+            title: <Text strong> 插入 </Text>,
             dataIndex: 'interpolated',
             key: 'interpolated',
         },
         {
-            title: <Text strong> Total </Text>,
+            title: <Text strong> 合计 </Text>,
             dataIndex: 'total',
             key: 'total',
         },
@@ -147,17 +148,17 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
                 <Row type='flex' justify='start'>
                     <Col>
                         <Text strong className='cvat-text'>
-                            Job status
+                        作业状态
                         </Text>
                         <Select value={jobStatus} onChange={changeJobStatus}>
                             <Select.Option key='1' value='annotation'>
-                                annotation
+                            注释
                             </Select.Option>
                             <Select.Option key='2' value='validation'>
-                                validation
+                                验证
                             </Select.Option>
                             <Select.Option key='3' value='completed'>
-                                completed
+                                完成
                             </Select.Option>
                         </Select>
                         {savingJobStatus && <Icon type='loading' />}
@@ -165,31 +166,31 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
                 </Row>
                 <Row type='flex' justify='start'>
                     <Col>
-                        <Text className='cvat-text'>Overview</Text>
+                        <Text className='cvat-text'>综述</Text>
                     </Col>
                 </Row>
                 <Row type='flex' justify='start'>
                     <Col span={5}>
                         <Text strong className='cvat-text'>
-                            Assignee
+                        代理人
                         </Text>
                         <Text className='cvat-text'>{assignee}</Text>
                     </Col>
                     <Col span={5}>
                         <Text strong className='cvat-text'>
-                            Start frame
+                        启动帧 
                         </Text>
                         <Text className='cvat-text'>{startFrame}</Text>
                     </Col>
                     <Col span={5}>
                         <Text strong className='cvat-text'>
-                            Stop frame
+                        停止帧
                         </Text>
                         <Text className='cvat-text'>{stopFrame}</Text>
                     </Col>
                     <Col span={5}>
                         <Text strong className='cvat-text'>
-                            Frames
+                        帧
                         </Text>
                         <Text className='cvat-text'>{stopFrame - startFrame + 1}</Text>
                     </Col>
@@ -198,7 +199,7 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
                     <Row type='flex' justify='start' className='cvat-job-info-bug-tracker'>
                         <Col>
                             <Text strong className='cvat-text'>
-                                Bug tracker
+                            漏洞追踪
                             </Text>
                             <a href={bugTracker}>{bugTracker}</a>
                         </Col>
@@ -206,7 +207,7 @@ export default function StatisticsModalComponent(props: Props): JSX.Element {
                 )}
                 <Row type='flex' justify='space-around' className='cvat-job-info-statistics'>
                     <Col span={24}>
-                        <Text className='cvat-text'>Annotations statistics</Text>
+                        <Text className='cvat-text'>注释统计</Text>
                         <Table scroll={{ y: 400 }} bordered pagination={false} columns={columns} dataSource={rows} />
                     </Col>
                 </Row>

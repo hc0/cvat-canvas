@@ -66,31 +66,30 @@ function filtersHelpModalContent(searchForwardShortcut: string, searchBackwardSh
     return (
         <>
             <Paragraph>
-                <Title level={3}>General</Title>
+                <Title level={3}>通用</Title>
             </Paragraph>
             <Paragraph>
-                You can use filters to display only subset of objects on a frame or to search objects that satisfy the
-                filters using hotkeys
+            您可以使用过滤器来显示帧上对应子集的对象，或者使用搜索键来匹配过滤器。
+
                 <Text strong>{` ${searchForwardShortcut} `}</Text>
-                and
+                和
                 <Text strong>{` ${searchBackwardShortcut} `}</Text>
             </Paragraph>
             <Paragraph>
-                <Text strong>Supported properties: </Text>
-                width, height, label, serverID, clientID, type, shape, occluded
+                <Text strong>支持的属性: </Text>
+                宽度、高度、标签、服务器 ID、客户端 ID、类型、形状、遮挡
                 <br />
-                <Text strong>Supported operators: </Text>
+                <Text strong>支持的操作: </Text>
                 ==, !=, &gt;, &gt;=, &lt;, &lt;=, (), &amp; and |
                 <br />
                 <Text strong>
-                    If you have double quotes in your query string, please escape them using back slash: \&quot; (see
-                    the latest example)
+                如果查询字符串中有双引号，请使用反斜杠进行转义: \&quot; (见最新示例)
                 </Text>
                 <br />
-                All properties and values are case-sensitive. CVAT uses json queries to perform search.
+                所有的属性和值都是区分大小写的，CVAT使用json查询来执行搜索。
             </Paragraph>
             <Paragraph>
-                <Title level={3}>Examples</Title>
+                <Title level={3}>例如</Title>
                 <ul>
                     <li>label==&quot;car&quot; | label==[&quot;road sign&quot;]</li>
                     <li>shape == &quot;polygon&quot;</li>
@@ -132,14 +131,15 @@ function AnnotationsFiltersInput(props: StateToProps & DispatchToProps): JSX.Ele
             placeholder={
                 underCursor ? (
                     <>
-                        <Tooltip title='Click to open help' mouseLeaveDelay={0}>
+                        <Tooltip title='点击打开帮助' mouseLeaveDelay={0}>
                             <Icon
                                 type='filter'
                                 onClick={(e: React.MouseEvent) => {
                                     e.stopPropagation();
                                     Modal.info({
+                                        okText:'确定',
                                         width: 700,
-                                        title: 'How to use filters?',
+                                        title: '如何使用过滤器?',
                                         content: filtersHelpModalContent(searchForwardShortcut, searchBackwardShortcut),
                                     });
                                 }}

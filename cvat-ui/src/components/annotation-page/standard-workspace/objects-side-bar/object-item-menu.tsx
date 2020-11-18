@@ -10,7 +10,7 @@ import Modal from 'antd/lib/modal';
 import Tooltip from 'antd/lib/tooltip';
 
 import { BackgroundIcon, ForegroundIcon, ResetPerspectiveIcon, ColorizeIcon } from 'icons';
-import { ObjectType, ShapeType, ColorBy } from 'reducers/interfaces';
+import { ObjectType, ShapeType, ColorBy, ColorByText } from 'reducers/interfaces';
 import ColorPicker from './color-picker';
 
 interface Props {
@@ -148,7 +148,7 @@ export default function ItemMenu(props: Props): JSX.Element {
                         <Tooltip title={`${changeColorShortcut}`} mouseLeaveDelay={0}>
                             <Button type='link'>
                                 <Icon component={ColorizeIcon} />
-                                {`Change ${colorBy.toLowerCase()} color`}
+                                {`改变${ColorByText[colorBy]}颜色`}
                             </Button>
                         </Tooltip>
                     </ColorPicker>

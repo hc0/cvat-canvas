@@ -101,12 +101,13 @@
             if (error.response) {
                 switch (error.response.status) {
                     case 401:
-                        store.remove("token");
-                        store.set(
-                          "token",
-                          "cf093b994f74e924e550e9d9c31dacae38418479"
-                        );
+                        // store.remove("token");
+                        // store.set(
+                        //   "token",
+                        //   "cf093b994f74e924e550e9d9c31dacae38418479"
+                        // );
                     // location.reload();
+                    throw generateError({message: '令牌过期，请关闭页面后重新打开'});
                 }
             }
             return Promise.reject(error.response.data)   // 返回接口返回的错误信息

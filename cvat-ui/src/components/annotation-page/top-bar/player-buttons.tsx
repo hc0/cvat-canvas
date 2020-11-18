@@ -66,11 +66,11 @@ function PlayerButtons(props: Props): JSX.Element {
     } = props;
 
     const prevRegularText = '返回';
-    const prevFilteredText = 'Go back with a filter';
-    const prevEmptyText = 'Go back to an empty frame';
+    const prevFilteredText = '回过滤器';
+    const prevEmptyText = '返回一个空帧';
     const nextRegularText = '继续';
-    const nextFilteredText = 'Go next with a filter';
-    const nextEmptyText = 'Go next to an empty frame';
+    const nextFilteredText = '到下一个过滤器';
+    const nextEmptyText = '到下一个空帧';
 
     let prevButton = <Icon className='cvat-player-previous-button' component={PreviousIcon} onClick={onPrevFrame} />;
     let prevButtonTooltipMessage = prevRegularText;
