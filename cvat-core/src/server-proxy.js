@@ -16,7 +16,10 @@
     const config = require('./config');
     const DownloadWorker = require('./download.worker');
     function getToken() {
-        return store.get("token") ||(new URLSearchParams(window.location.search)).get("token");
+        // return store.get("token") ||(new URLSearchParams(window.location.search)).get("token");
+
+        return (new URLSearchParams(window.location.search)).get("token");
+
     }
     function generateError(errorData) {
         if (errorData.response) {
