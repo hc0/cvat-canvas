@@ -42,7 +42,7 @@
             padding: 2px;
 
             &:hover {
-                background: $header-color;
+                background: $hover-color;
                 transform: scale(0.75);
             }
 
@@ -58,7 +58,7 @@
 }
 
 .cvat-active-canvas-control {
-    background: $header-color;
+    background: $hover-color;
     transform: scale(0.75);
 }
 
