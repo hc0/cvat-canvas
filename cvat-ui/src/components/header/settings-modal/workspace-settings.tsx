@@ -58,13 +58,13 @@ export default function WorkspaceSettingsComponent(props: Props): JSX.Element {
                             onSwitchAutoSave(event.target.checked);
                         }}
                     >
-                        Enable auto save
+                        自动保存
                     </Checkbox>
                 </Col>
             </Row>
             <Row type='flex'>
                 <Col className='cvat-workspace-settings-auto-save-interval'>
-                    <Text type='secondary'> Auto save every </Text>
+                    <Text type='secondary'> 每 </Text>
                     <InputNumber
                         min={minAutoSaveInterval}
                         max={maxAutoSaveInterval}
@@ -78,7 +78,7 @@ export default function WorkspaceSettingsComponent(props: Props): JSX.Element {
                             }
                         }}
                     />
-                    <Text type='secondary'> minutes </Text>
+                    <Text type='secondary'> 分钟自动保存 </Text>
                 </Col>
             </Row>
             <Row className='cvat-workspace-settings-show-interpolated'>
@@ -90,11 +90,11 @@ export default function WorkspaceSettingsComponent(props: Props): JSX.Element {
                             onSwitchShowingInterpolatedTracks(event.target.checked);
                         }}
                     >
-                        Show all interpolation tracks
+                        显示所有插值轨迹
                     </Checkbox>
                 </Col>
                 <Col>
-                    <Text type='secondary'> Show hidden interpolated objects in the side panel </Text>
+                    <Text type='secondary'> 在面板中显示隐藏的插值 </Text>
                 </Col>
             </Row>
             <Row className='cvat-workspace-settings-show-text-always'>
@@ -106,13 +106,13 @@ export default function WorkspaceSettingsComponent(props: Props): JSX.Element {
                             onSwitchShowingObjectsTextAlways(event.target.checked);
                         }}
                     >
-                        Always show object details
+                        始终显示对象详细信息
                     </Checkbox>
                 </Col>
                 <Col>
                     <Text type='secondary'>
                         {' '}
-                        Show text for an object on the canvas not only when the object is activated{' '}
+                        在画布上显示对象文本(不仅在激活对象时){' '}
                     </Text>
                 </Col>
             </Row>
@@ -125,19 +125,19 @@ export default function WorkspaceSettingsComponent(props: Props): JSX.Element {
                             onSwitchAutomaticBordering(event.target.checked);
                         }}
                     >
-                        Automatic bordering
+                        自动边框
                     </Checkbox>
                 </Col>
                 <Col>
                     <Text type='secondary'>
                         {' '}
-                        Enable automatic bordering for polygons and polylines during drawing/editing{' '}
+                        在绘图和编辑过程中为多边形和折线启用自动边框{' '}
                     </Text>
                 </Col>
             </Row>
             <Row className='cvat-workspace-settings-aam-zoom-margin'>
                 <Col>
-                    <Text className='cvat-text-color'> Attribute annotation mode (AAM) zoom margin </Text>
+                    <Text className='cvat-text-color'> 属性注释模式(AAM) 变焦边距 </Text>
                     <InputNumber
                         min={minAAMMargin}
                         max={maxAAMMargin}

@@ -23,14 +23,14 @@ const SettingsModal = (props: SettingsModalProps): JSX.Element => {
 
     return (
         <Modal
-            title='Settings'
+            title='设置'
             visible={visible}
             onCancel={onClose}
             width={800}
             className='cvat-settings-modal'
             footer={
                 <Button type='primary' onClick={onClose}>
-                    Close
+                    关闭
                 </Button>
             }
         >
@@ -40,7 +40,7 @@ const SettingsModal = (props: SettingsModalProps): JSX.Element => {
                         tab={
                             <span>
                                 <Icon type='play-circle' />
-                                <Text>Player</Text>
+                                <Text>播放</Text>
                             </span>
                         }
                         key='player'
@@ -51,7 +51,7 @@ const SettingsModal = (props: SettingsModalProps): JSX.Element => {
                         tab={
                             <span>
                                 <Icon type='laptop' />
-                                <Text>Workspace</Text>
+                                <Text>工作台</Text>
                             </span>
                         }
                         key='workspace'

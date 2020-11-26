@@ -210,12 +210,12 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                     {sidebarCollapsed ? (
                         <Icon type='menu-fold' title='Show' />
                     ) : (
-                        <Icon type='menu-unfold' title='Hide' />
-                    )}
+                            <Icon type='menu-unfold' title='Hide' />
+                        )}
                 </span>
                 <Row type='flex' justify='start' className='cvat-tag-annotation-sidebar-label-select'>
                     <Col>
-                        <Text strong>Tag label</Text>
+                        <Text strong>标签</Text>
                         <Select value={`${selectedLabelID}`} onChange={onChangeLabel} size='default'>
                             {labels.map((label: any) => (
                                 <Select.Option key={label.id} value={`${label.id}`}>
@@ -227,10 +227,10 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                 </Row>
                 <Row type='flex' justify='space-around' className='cvat-tag-annotation-sidebar-buttons'>
                     <Col span={8}>
-                        <Button onClick={() => onAddTag(selectedLabelID)}>Add tag</Button>
+                        <Button onClick={() => onAddTag(selectedLabelID)}>添加标签</Button>
                     </Col>
                     <Col span={8}>
-                        <Button onClick={onChangeFrame}>Skip frame</Button>
+                        <Button onClick={onChangeFrame}>跳帧</Button>
                     </Col>
                 </Row>
                 <Row type='flex' className='cvat-tag-anntation-sidebar-checkbox-skip-frame'>
@@ -241,13 +241,13 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                                 setSkipFrame(event.target.checked);
                             }}
                         >
-                            Automatically go to the next frame
+                            自动转到下一帧
                         </Checkbox>
                     </Col>
                 </Row>
                 <Row type='flex' justify='start'>
                     <Col>
-                        <Text strong>Frame tags:&nbsp;</Text>
+                        <Text strong>帧的标签:&nbsp;</Text>
                         {frameTags.map((tag: any) => (
                             <Tag
                                 color={tag.label.color}
@@ -270,15 +270,15 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                 <Row type='flex' justify='center' className='cvat-tag-annotation-sidebar-shortcut-help'>
                     <Col>
                         <Text>
-                            Use&nbsp;
+                            使用&nbsp;
                             <Text code>N</Text>
-                            &nbsp;or digits&nbsp;
+                            &nbsp;或数字&nbsp;
                             <Text code>0-9</Text>
-                            &nbsp;to add selected tag
+                            &nbsp;t添加所选标签
                             <br />
-                            or&nbsp;
+                            或使用&nbsp;
                             <Text code>→</Text>
-                            &nbsp;to skip frame
+                            &nbsp; 跳过帧
                         </Text>
                     </Col>
                 </Row>

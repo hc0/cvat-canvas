@@ -84,7 +84,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
         <div className='cvat-player-settings'>
             <Row type='flex' align='bottom' className='cvat-player-settings-step'>
                 <Col>
-                    <Text className='cvat-text-color'> Player step </Text>
+                    <Text className='cvat-text-color'> 播放步骤 </Text>
                     <InputNumber
                         min={minFrameStep}
                         max={maxFrameStep}
@@ -98,16 +98,16 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                 </Col>
                 <Col offset={1}>
                     <Text type='secondary'>
-                        Number of frames skipped when selecting
+                        选择跳过的帧数
                         <Icon component={BackJumpIcon} />
-                        or
+                        或
                         <Icon component={ForwardJumpIcon} />
                     </Text>
                 </Col>
             </Row>
             <Row type='flex' align='middle' className='cvat-player-settings-speed'>
                 <Col>
-                    <Text className='cvat-text-color'> Player speed </Text>
+                    <Text className='cvat-text-color'> 播放速度 </Text>
                     <Select
                         value={frameSpeed}
                         onChange={(speed: FrameSpeed): void => {
@@ -115,22 +115,22 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         }}
                     >
                         <Select.Option key='fastest' value={FrameSpeed.Fastest}>
-                            Fastest
+                            最快速
                         </Select.Option>
                         <Select.Option key='fast' value={FrameSpeed.Fast}>
-                            Fast
+                            快速
                         </Select.Option>
                         <Select.Option key='usual' value={FrameSpeed.Usual}>
-                            Usual
+                            匀速
                         </Select.Option>
                         <Select.Option key='slow' value={FrameSpeed.Slow}>
-                            Slow
+                            慢速
                         </Select.Option>
                         <Select.Option key='slower' value={FrameSpeed.Slower}>
-                            Slower
+                            较慢
                         </Select.Option>
                         <Select.Option key='slowest' value={FrameSpeed.Slowest}>
-                            Slowest
+                            最慢速
                         </Select.Option>
                     </Select>
                 </Col>
@@ -148,7 +148,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         overlayClassName='canvas-background-color-picker-popover'
                         trigger='click'
                     >
-                        <Button type='default'>Select canvas background color</Button>
+                        <Button type='default'>选择画面背景颜色</Button>
                     </Popover>
                 </Col>
             </Row>
@@ -161,13 +161,13 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                             onSwitchGrid(event.target.checked);
                         }}
                     >
-                        Show grid
+                        显示网格
                     </Checkbox>
                 </Col>
             </Row>
             <Row type='flex' justify='space-between'>
                 <Col span={8} className='cvat-player-settings-grid-size'>
-                    <Text className='cvat-text-color'> Grid size </Text>
+                    <Text className='cvat-text-color'> 网格尺寸 </Text>
                     <InputNumber
                         min={minGridSize}
                         max={maxGridSize}
@@ -181,7 +181,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                     />
                 </Col>
                 <Col span={8} className='cvat-player-settings-grid-color'>
-                    <Text className='cvat-text-color'> Grid color </Text>
+                    <Text className='cvat-text-color'> 网格颜色 </Text>
                     <Select
                         value={gridColor}
                         disabled={!grid}
@@ -190,24 +190,24 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         }}
                     >
                         <Select.Option key='white' value={GridColor.White}>
-                            White
+                            白色
                         </Select.Option>
                         <Select.Option key='black' value={GridColor.Black}>
-                            Black
+                            黑色
                         </Select.Option>
                         <Select.Option key='red' value={GridColor.Red}>
-                            Red
+                            红色
                         </Select.Option>
                         <Select.Option key='green' value={GridColor.Green}>
-                            Green
+                            绿色
                         </Select.Option>
                         <Select.Option key='blue' value={GridColor.Blue}>
-                            Blue
+                            蓝色
                         </Select.Option>
                     </Select>
                 </Col>
                 <Col span={8} className='cvat-player-settings-grid-opacity'>
-                    <Text className='cvat-text-color'> Grid opacity </Text>
+                    <Text className='cvat-text-color'> 网格不透明度 </Text>
                     <Slider
                         min={0}
                         max={100}
@@ -231,11 +231,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                     onSwitchResetZoom(event.target.checked);
                                 }}
                             >
-                                Reset zoom
+                                设置变焦
                             </Checkbox>
                         </Col>
                         <Col>
-                            <Text type='secondary'> Fit image after changing frame </Text>
+                            <Text type='secondary'> 换帧后合适的图像</Text>
                         </Col>
                     </Row>
                 </Col>
@@ -249,11 +249,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                     onSwitchRotateAll(event.target.checked);
                                 }}
                             >
-                                Rotate all images
+                                旋转所有图像
                             </Checkbox>
                         </Col>
                         <Col>
-                            <Text type='secondary'> Rotate all images simultaneously </Text>
+                            <Text type='secondary'> 同时旋转所有图像 </Text>
                         </Col>
                     </Row>
                 </Col>
@@ -261,7 +261,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
             <Row>
                 <Col span={12}>
                     <Row className='cvat-player-settings-brightness'>
-                        <Col className='cvat-text-color'>Brightness</Col>
+                        <Col className='cvat-text-color'>亮度</Col>
                         <Col>
                             <Slider
                                 min={50}
@@ -274,7 +274,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         </Col>
                     </Row>
                     <Row className='cvat-player-settings-contrast'>
-                        <Col className='cvat-text-color'>Contrast</Col>
+                        <Col className='cvat-text-color'>对比度</Col>
                         <Col>
                             <Slider
                                 min={50}
@@ -287,7 +287,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         </Col>
                     </Row>
                     <Row className='cvat-player-settings-saturation'>
-                        <Col className='cvat-text-color'>Saturation</Col>
+                        <Col className='cvat-text-color'>饱和度</Col>
                         <Col>
                             <Slider
                                 min={0}
@@ -308,7 +308,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                     onChangeSaturationLevel(100);
                                 }}
                             >
-                                Reset color settings
+                                颜色重置
                             </Button>
                         </Col>
                     </Row>

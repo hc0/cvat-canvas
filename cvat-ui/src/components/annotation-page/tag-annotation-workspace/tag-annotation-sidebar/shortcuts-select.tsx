@@ -84,7 +84,7 @@ const ShortcutsSelect = (props: Props): JSX.Element => {
             <GlobalHotKeys keyMap={keyMap as KeyMap} handlers={handlers} allowChanges />
             <Row>
                 <Col>
-                    <Text strong>Shortcuts for labels:</Text>
+                    <Text strong>标签的快捷方式:</Text>
                 </Col>
             </Row>
             {shift(Object.keys(shortcutLabelMap), 1)
@@ -92,7 +92,7 @@ const ShortcutsSelect = (props: Props): JSX.Element => {
                 .map((id) => (
                     <Row key={id}>
                         <Col>
-                            <Text strong>{`Key ${id}:`}</Text>
+                            <Text strong>{`键入 ${id}:`}</Text>
                             <Select
                                 value={`${shortcutLabelMap[Number.parseInt(id, 10)]}`}
                                 onChange={(value: string) => {
