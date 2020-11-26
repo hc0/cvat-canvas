@@ -10,6 +10,7 @@ import Button from 'antd/lib/button';
 
 import { Workspace } from 'reducers/interfaces';
 import { InfoIcon, FullscreenIcon } from 'icons';
+import Setting from "../../header/header-setting"
 
 interface Props {
     workspace: Workspace;
@@ -38,6 +39,7 @@ function RightGroup(props: Props): JSX.Element {
                 <Icon component={FullscreenIcon} />
                 全屏
             </Button>
+            <Setting />
             <Button type='link' className='cvat-annotation-header-button' onClick={showStatistics}>
                 <Icon component={InfoIcon} />
                 信息

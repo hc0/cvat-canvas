@@ -61,3 +61,24 @@
     margin-left: 16px;
     margin-right: 0;
 }
+.header-setting{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    button{
+        position: absolute;
+        top: 4px;
+        i{
+            font-size: 32px;
+            color:#0066b3;
+        }
+        span{
+            position: absolute;
+            top:41px;
+            left:13px;
+            color: #303030;
+            width: 30px;
+            height: 12px;
+        }
+    }
+}
