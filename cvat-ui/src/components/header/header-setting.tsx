@@ -48,7 +48,7 @@ function HeaderContainer(props: Props): JSX.Element {
     <div className='header-setting'>
       <Button className="cvat-annotation-header-button" type='link' title={`请 ${switchSettingsShortcut} 进行设置`} onClick={() => switchSettingsDialog(true)}>
         <Icon type='setting' />
-        <span>设置</span>
+        {/* <span>设置</span> */}
       </Button>
       <SettingsModal visible={settingsDialogShown} onClose={() => switchSettingsDialog(false)} />
     </div>

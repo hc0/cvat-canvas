@@ -37,13 +37,13 @@ function RightGroup(props: Props): JSX.Element {
                 }}
             >
                 <Icon component={FullscreenIcon} />
-                全屏
+                {/* 全屏 */}
             </Button>
-            <Setting />
             <Button type='link' className='cvat-annotation-header-button' onClick={showStatistics}>
                 <Icon component={InfoIcon} />
-                信息
+                {/* 信息 */}
             </Button>
+            <Setting />
             <div>
                 <Select className='cvat-workspace-selector' onChange={changeWorkspace} value={workspace}>
                     {Object.values(Workspace).map((ws) => (

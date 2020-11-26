@@ -40,17 +40,17 @@ function LeftGroup(props: Props): JSX.Element {
         onRedoClick,
     } = props;
 
-    let mapObj:object = {
+    let mapObj: object = {
         'Created objects are being saved on the server': '在服务器上保存创建的对象',
-        'Updated objects are being saved on the server':  '在服务器上保存更新的对象',
-        'Deleted objects are being deleted from the server':'从服务器上删除被删除的对象'
+        'Updated objects are being saved on the server': '在服务器上保存更新的对象',
+        'Deleted objects are being deleted from the server': '从服务器上删除被删除的对象'
     }
-    
-    let newSavingStatuses: any[] = savingStatuses.map((item:string)=>{
+
+    let newSavingStatuses: any[] = savingStatuses.map((item: string) => {
         let list: any = mapObj[item];
         return list;
     })
-   
+
 
     return (
         <Col className='cvat-annotation-header-left-group'>
@@ -67,7 +67,7 @@ function LeftGroup(props: Props): JSX.Element {
                 className={saving ? 'cvat-annotation-disabled-header-button' : 'cvat-annotation-header-button'}
             >
                 <Icon component={SaveIcon} />
-                {saving ? '保存中...' : '保存'}
+                {/* {saving ? '保存中...' : '保存'} */}
                 <Modal title='保存服务器上的更改' visible={saving} footer={[]} closable={false}>
                     <Timeline pending={newSavingStatuses[savingStatuses.length - 1] || '等待..'}>
                         {newSavingStatuses.slice(0, -1).map((status: string, id: number) => (
@@ -85,7 +85,7 @@ function LeftGroup(props: Props): JSX.Element {
                 onClick={onUndoClick}
             >
                 <Icon component={UndoIcon} />
-                <span>撤销</span>
+                {/* <span>撤销</span> */}
             </Button>
             <Button
                 title={`恢复: ${redoAction} ${redoShortcut}`}
@@ -96,7 +96,7 @@ function LeftGroup(props: Props): JSX.Element {
                 onClick={onRedoClick}
             >
                 <Icon component={RedoIcon} />
-                恢复
+                {/* 恢复 */}
             </Button>
         </Col>
     );
