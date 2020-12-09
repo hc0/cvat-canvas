@@ -152,7 +152,7 @@ function AppearanceBlock(props: Props): JSX.Element {
         >
             <Collapse.Panel header={<Text strong>显示</Text>} key='appearance'>
                 <div className='cvat-objects-appearance-content'>
-                    <Text type='secondary'>涂色</Text>
+                    <Text type='secondary'>颜色区分</Text>
                     <Radio.Group value={colorBy} onChange={changeShapesColorBy}>
                         <Radio.Button value={ColorBy.LABEL}>{ColorByText[ColorBy.LABEL]}</Radio.Button>
                         <Radio.Button value={ColorBy.INSTANCE}>{ColorByText[ColorBy.INSTANCE]}</Radio.Button>

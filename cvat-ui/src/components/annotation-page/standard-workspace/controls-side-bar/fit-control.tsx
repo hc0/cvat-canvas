@@ -17,7 +17,7 @@ function FitControl(props: Props): JSX.Element {
     const { canvasInstance } = props;
 
     return (
-        <Tooltip title='合适的图像 [双击]' placement='right' mouseLeaveDelay={0}>
+        <Tooltip title='重置图像 [双击]' placement='right' mouseLeaveDelay={0}>
             <Icon className='cvat-fit-control' component={FitIcon} onClick={(): void => canvasInstance.fit()} />
         </Tooltip>
     );
