@@ -65,10 +65,10 @@ function PlayerButtons(props: Props): JSX.Element {
         setNextButton,
     } = props;
 
-    const prevRegularText = '返回';
+    const prevRegularText = '向后';
     const prevFilteredText = '回过滤器';
     const prevEmptyText = '返回一个空帧';
-    const nextRegularText = '继续';
+    const nextRegularText = '向前';
     const nextFilteredText = '到下一个过滤器';
     const nextEmptyText = '到下一个空帧';
 
@@ -103,7 +103,7 @@ function PlayerButtons(props: Props): JSX.Element {
             <Tooltip title='第一帧' mouseLeaveDelay={0}>
                 <Icon className='cvat-player-first-button' component={FirstIcon} onClick={onFirstFrame} />
             </Tooltip>
-            <Tooltip title={`上一步 ${backwardShortcut}`} mouseLeaveDelay={0}>
+            <Tooltip title={`后一步 ${backwardShortcut}`} mouseLeaveDelay={0}>
                 <Icon className='cvat-player-backward-button' component={BackJumpIcon} onClick={onBackward} />
             </Tooltip>
             <Popover
@@ -199,10 +199,10 @@ function PlayerButtons(props: Props): JSX.Element {
                     {nextButton}
                 </Tooltip>
             </Popover>
-            <Tooltip title={`下一步 ${forwardShortcut}`} mouseLeaveDelay={0}>
+            <Tooltip title={`前一步 ${forwardShortcut}`} mouseLeaveDelay={0}>
                 <Icon className='cvat-player-forward-button' component={ForwardJumpIcon} onClick={onForward} />
             </Tooltip>
-            <Tooltip title='下一帧' mouseLeaveDelay={0}>
+            <Tooltip title='最后一帧' mouseLeaveDelay={0}>
                 <Icon className='cvat-player-last-button' component={LastIcon} onClick={onLastFrame} />
             </Tooltip>
         </Col>

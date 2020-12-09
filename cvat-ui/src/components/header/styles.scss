@@ -20,6 +20,9 @@
     align-items: center;
     padding-left:20px;
 }
+// .cvat-left-header .cvat-logo-icon image{
+//     height:20px;
+// }
 .cvat-logo-img{
     height:38px;
 }
@@ -34,7 +37,8 @@
 
 .anticon.cvat-logo-icon {
     > svg {
-        transform: scale(1);
+        transform: scale(.778);
+        transform-origin: center left;
     }
 }
 
