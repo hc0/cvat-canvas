@@ -84,7 +84,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
         <div className='cvat-player-settings'>
             <Row type='flex' align='bottom' className='cvat-player-settings-step'>
                 <Col>
-                    <Text className='cvat-text-color'> 播放步骤 </Text>
+                    <Text className='cvat-text-color'> 播放步长 </Text>
                     <InputNumber
                         min={minFrameStep}
                         max={maxFrameStep}
@@ -148,7 +148,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         overlayClassName='canvas-background-color-picker-popover'
                         trigger='click'
                     >
-                        <Button type='default'>选择画面背景颜色</Button>
+                        <Button type='default'>选择画布背景色</Button>
                     </Popover>
                 </Col>
             </Row>

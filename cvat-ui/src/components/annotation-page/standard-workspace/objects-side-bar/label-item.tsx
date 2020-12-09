@@ -7,6 +7,8 @@ import { Row, Col } from 'antd/lib/grid';
 import Icon from 'antd/lib/icon';
 import Button from 'antd/lib/button';
 import Text from 'antd/lib/typography/Text';
+import Tooltip from 'antd/lib/tooltip';
+
 
 interface Props {
     labelName: string;
@@ -50,18 +52,24 @@ function LabelItemComponent(props: Props): JSX.Element {
                 </Text>
             </Col>
             <Col span={3}>
+                <Tooltip title={'切换锁定属性'}>
                 {statesLocked ? (
-                    <Icon type='lock' onClick={unlockStates} />
-                ) : (
-                    <Icon type='unlock' onClick={lockStates} />
-                )}
+                        <Icon type='lock' onClick={unlockStates} />
+                    ) : (
+                        <Icon type='unlock' onClick={lockStates} />
+                    )}
+                </Tooltip >
+
+                
             </Col>
             <Col span={3}>
-                {statesHidden ? (
-                    <Icon type='eye-invisible' onClick={showStates} />
-                ) : (
-                    <Icon type='eye' onClick={hideStates} />
-                )}
+                <Tooltip title={'切换隐藏属性'}>
+                    {statesHidden ? (
+                        <Icon type='eye-invisible' onClick={showStates} />
+                    ) : (
+                        <Icon type='eye' onClick={hideStates} />
+                    )}
+                </Tooltip >
             </Col>
         </Row>
     );
