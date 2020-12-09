@@ -48,7 +48,7 @@ function HeaderContainer(props: Props): JSX.Element {
   } = props;
   return (
     <div className='header-setting'>
-      <Tooltip title={'设置 '}>
+      <Tooltip title={'设置 '} overlayClassName="extraTip">
         <Button className="cvat-annotation-header-button" type='link' title={`请 ${switchSettingsShortcut} 进行设置`} onClick={() => switchSettingsDialog(true)}>
           <Icon type='setting' />
           {/* <span>设置</span> */}

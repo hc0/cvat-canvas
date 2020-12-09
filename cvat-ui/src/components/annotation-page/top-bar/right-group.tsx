@@ -8,7 +8,7 @@ import Icon from 'antd/lib/icon';
 import Select from 'antd/lib/select';
 import Button from 'antd/lib/button';
 import Tooltip from 'antd/lib/tooltip';
-
+import "./style.scss";
 
 import { Workspace } from 'reducers/interfaces';
 import { InfoIcon, FullscreenIcon } from 'icons';
@@ -26,7 +26,7 @@ function RightGroup(props: Props): JSX.Element {
     return (
         <Col className='cvat-annotation-header-right-group'>
 
-            <Tooltip title={'全屏 '}>
+            <Tooltip title={'全屏 '} overlayClassName="extraTip">
                 <Button
                     type='link'
                     className='cvat-annotation-header-button'
@@ -45,16 +45,14 @@ function RightGroup(props: Props): JSX.Element {
                 </Button>
             </Tooltip>
 
-            <Tooltip title={'详情 '}>
+            <Tooltip title={'详情 '} overlayClassName="extraTip">
                 <Button type='link' className='cvat-annotation-header-button' onClick={showStatistics}>
                     <Icon component={InfoIcon} />
                     {/* 信息 */}
                 </Button>
             </Tooltip>
 
-            <Tooltip title={'设置 '}>
-                <Setting />
-            </Tooltip>
+            <Setting />
             <div>
                 <Select className='cvat-workspace-selector' onChange={changeWorkspace} value={workspace}>
                     {Object.values(Workspace).map((ws) => (

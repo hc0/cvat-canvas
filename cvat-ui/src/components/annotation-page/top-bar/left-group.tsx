@@ -10,7 +10,7 @@ import Button from 'antd/lib/button';
 import Timeline from 'antd/lib/timeline';
 import Dropdown from 'antd/lib/dropdown';
 import Tooltip from 'antd/lib/tooltip';
-
+import "./style.scss";
 import AnnotationMenuContainer from 'containers/annotation-page/top-bar/annotation-menu';
 import { MainMenuIcon, SaveIcon, UndoIcon, RedoIcon } from 'icons';
 
@@ -61,8 +61,8 @@ function LeftGroup(props: Props): JSX.Element {
                     Menu
                 </Button>
             </Dropdown> */}
-            <Tooltip title={'保存'}>
-                
+            <Tooltip title={'保存'} overlayClassName="extraTip">
+
                 <Button
                     title={`保存当前更改 ${saveShortcut}`}
                     onClick={saving ? undefined : onSaveAnnotation}
@@ -81,10 +81,10 @@ function LeftGroup(props: Props): JSX.Element {
                 </Button>
             </Tooltip>
 
-            <Tooltip title={'撤销'}>
-            {/* title={`撤销: ${undoAction} ${undoShortcut}`} */}
+            <Tooltip title={'撤销'} overlayClassName="extraTip">
+                {/* title={`撤销: ${undoAction} ${undoShortcut}`} */}
                 <Button
-                    
+
                     disabled={!undoAction}
                     style={{ pointerEvents: undoAction ? 'initial' : 'none', opacity: undoAction ? 1 : 0.5 }}
                     type='link'
@@ -95,11 +95,11 @@ function LeftGroup(props: Props): JSX.Element {
                     {/* <span>撤销</span> */}
                 </Button>
             </Tooltip>
-            
-            <Tooltip title={'恢复'}>
-            {/* title={`恢复: ${redoAction} ${redoShortcut}`} */}
+
+            <Tooltip title={'恢复'} overlayClassName="extraTip">
+                {/* title={`恢复: ${redoAction} ${redoShortcut}`} */}
                 <Button
-                   
+
                     disabled={!redoAction}
                     style={{ pointerEvents: redoAction ? 'initial' : 'none', opacity: redoAction ? 1 : 0.5 }}
                     type='link'

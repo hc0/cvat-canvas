@@ -41,7 +41,6 @@
         margin-left: 0;
         font-size: 10px;
     }
-
     > i {
         transform: scale(0.7);
         padding: 6px 3px;
@@ -50,17 +49,26 @@
     &:hover > i {
         transform: scale(0.85);
     }
-
-    &:active > i {
+    &:active  i {
         transform: scale(0.7);
     }
-
     > * {
         display: block;
         line-height: 0;
     }
 }
-
+.cvat-annotation-header-button{
+    i {
+        transform: scale(0.7);
+        padding: 6px 3px;
+    }
+    &:active > i {
+        transform: scale(0.7);
+    }
+    &:hover i {
+        transform: scale(0.85);
+    }
+}
 .cvat-annotation-disabled-header-button {
     @extend .cvat-annotation-header-button;
 
