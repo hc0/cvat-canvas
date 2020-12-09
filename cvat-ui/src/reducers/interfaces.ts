@@ -458,7 +458,7 @@ export enum ColorBy {
     LABEL = 'Label',
 }
 export enum ColorByText {
-    Instance = '距离',
+    Instance = '实例',
     Group = '分组',
     Label = '标签',
 }

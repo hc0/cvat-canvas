@@ -9,6 +9,8 @@ import { switchSettingsDialog as switchSettingsDialogAction } from 'actions/sett
 import { CombinedState } from 'reducers/interfaces';
 import SettingsModal from './settings-modal/settings-modal';
 import "./styles.scss";
+import Tooltip from 'antd/lib/tooltip';
+
 interface StateToProps {
   switchSettingsShortcut: string;
   settingsDialogShown: boolean;
@@ -46,10 +48,12 @@ function HeaderContainer(props: Props): JSX.Element {
   } = props;
   return (
     <div className='header-setting'>
-      <Button className="cvat-annotation-header-button" type='link' title={`请 ${switchSettingsShortcut} 进行设置`} onClick={() => switchSettingsDialog(true)}>
-        <Icon type='setting' />
-        {/* <span>设置</span> */}
-      </Button>
+      <Tooltip title={'设置 '}>
+        <Button className="cvat-annotation-header-button" type='link' title={`请 ${switchSettingsShortcut} 进行设置`} onClick={() => switchSettingsDialog(true)}>
+          <Icon type='setting' />
+          {/* <span>设置</span> */}
+        </Button>
+      </Tooltip>
       <SettingsModal visible={settingsDialogShown} onClose={() => switchSettingsDialog(false)} />
     </div>
   );

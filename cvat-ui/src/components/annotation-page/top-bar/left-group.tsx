@@ -9,6 +9,7 @@ import Modal from 'antd/lib/modal';
 import Button from 'antd/lib/button';
 import Timeline from 'antd/lib/timeline';
 import Dropdown from 'antd/lib/dropdown';
+import Tooltip from 'antd/lib/tooltip';
 
 import AnnotationMenuContainer from 'containers/annotation-page/top-bar/annotation-menu';
 import { MainMenuIcon, SaveIcon, UndoIcon, RedoIcon } from 'icons';
@@ -60,44 +61,55 @@ function LeftGroup(props: Props): JSX.Element {
                     Menu
                 </Button>
             </Dropdown> */}
-            <Button
-                title={`保存当前更改 ${saveShortcut}`}
-                onClick={saving ? undefined : onSaveAnnotation}
-                type='link'
-                className={saving ? 'cvat-annotation-disabled-header-button' : 'cvat-annotation-header-button'}
-            >
-                <Icon component={SaveIcon} />
-                {/* {saving ? '保存中...' : '保存'} */}
-                <Modal title='保存服务器上的更改' visible={saving} footer={[]} closable={false}>
-                    <Timeline pending={newSavingStatuses[savingStatuses.length - 1] || '等待..'}>
-                        {newSavingStatuses.slice(0, -1).map((status: string, id: number) => (
-                            <Timeline.Item key={id}>{status}</Timeline.Item>
-                        ))}
-                    </Timeline>
-                </Modal>
-            </Button>
-            <Button
-                title={`撤销: ${undoAction} ${undoShortcut}`}
-                disabled={!undoAction}
-                style={{ pointerEvents: undoAction ? 'initial' : 'none', opacity: undoAction ? 1 : 0.5 }}
-                type='link'
-                className='cvat-annotation-header-button'
-                onClick={onUndoClick}
-            >
-                <Icon component={UndoIcon} />
-                {/* <span>撤销</span> */}
-            </Button>
-            <Button
-                title={`恢复: ${redoAction} ${redoShortcut}`}
-                disabled={!redoAction}
-                style={{ pointerEvents: redoAction ? 'initial' : 'none', opacity: redoAction ? 1 : 0.5 }}
-                type='link'
-                className='cvat-annotation-header-button'
-                onClick={onRedoClick}
-            >
-                <Icon component={RedoIcon} />
-                {/* 恢复 */}
-            </Button>
+            <Tooltip title={'保存'}>
+                
+                <Button
+                    title={`保存当前更改 ${saveShortcut}`}
+                    onClick={saving ? undefined : onSaveAnnotation}
+                    type='link'
+                    className={saving ? 'cvat-annotation-disabled-header-button' : 'cvat-annotation-header-button'}
+                >
+                    <Icon component={SaveIcon} />
+                    {/* {saving ? '保存中...' : '保存'} */}
+                    <Modal title='保存服务器上的更改' visible={saving} footer={[]} closable={false}>
+                        <Timeline pending={newSavingStatuses[savingStatuses.length - 1] || '等待..'}>
+                            {newSavingStatuses.slice(0, -1).map((status: string, id: number) => (
+                                <Timeline.Item key={id}>{status}</Timeline.Item>
+                            ))}
+                        </Timeline>
+                    </Modal>
+                </Button>
+            </Tooltip>
+
+            <Tooltip title={'撤销'}>
+            {/* title={`撤销: ${undoAction} ${undoShortcut}`} */}
+                <Button
+                    
+                    disabled={!undoAction}
+                    style={{ pointerEvents: undoAction ? 'initial' : 'none', opacity: undoAction ? 1 : 0.5 }}
+                    type='link'
+                    className='cvat-annotation-header-button'
+                    onClick={onUndoClick}
+                >
+                    <Icon component={UndoIcon} />
+                    {/* <span>撤销</span> */}
+                </Button>
+            </Tooltip>
+            
+            <Tooltip title={'恢复'}>
+            {/* title={`恢复: ${redoAction} ${redoShortcut}`} */}
+                <Button
+                   
+                    disabled={!redoAction}
+                    style={{ pointerEvents: redoAction ? 'initial' : 'none', opacity: redoAction ? 1 : 0.5 }}
+                    type='link'
+                    className='cvat-annotation-header-button'
+                    onClick={onRedoClick}
+                >
+                    <Icon component={RedoIcon} />
+                    {/* 恢复 */}
+                </Button>
+            </Tooltip>
         </Col>
     );
 }
