@@ -58,7 +58,7 @@ function LabelItemComponent(props: Props): JSX.Element {
                     ) : (
                         <Icon type='unlock' onClick={lockStates} />
                     )}
-                </Tooltip >
+                </Tooltip>
 
                 
             </Col>
