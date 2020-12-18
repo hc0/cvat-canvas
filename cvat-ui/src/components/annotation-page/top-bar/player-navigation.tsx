@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 
 import { Row, Col } from 'antd/lib/grid';
 import Icon from 'antd/lib/icon';
@@ -45,18 +45,25 @@ function PlayerNavigation(props: Props): JSX.Element {
             setFrameInputValue(frameNumber);
         }
     }, [frameNumber]);
+    const contentRef = useRef<HTMLIFrameElement>(null)
 
     return (
         <>
             <Col className='cvat-player-controls'>
                 <Row type='flex'>
-                    <Col>
+                    <Col >
                         <Slider
                             className='cvat-player-slider'
                             min={startFrame}
                             max={stopFrame}
                             value={frameNumber || 0}
-                            onChange={onSliderChange}
+                            onChange={(e)=>{
+                                onSliderChange.bind(this)(e);
+                                    setTimeout(()=>{
+                                        contentRef.current.blur();
+                                    },2000)
+                            }}
+                            ref = {contentRef}
                         />
                     </Col>
                 </Row>
