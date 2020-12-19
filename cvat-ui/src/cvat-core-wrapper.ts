@@ -7,7 +7,7 @@ import _cvat from 'cvat-core/src/api';
 const cvat: any = _cvat;
 
 cvat.config.backendAPI =
-    typeof process.env.REACT_APP_API_URL === 'undefined' ? 'http://'+window.location.hostname+':'+window.location.port+'/api/v1' : `${process.env.REACT_APP_API_URL}/api/v1`;
+    typeof process.env.REACT_APP_API_URL === 'undefined' ? '/cvat/api/v1' : `${process.env.REACT_APP_API_URL}/api/v1`;
 
 export default function getCore(): any {
     return cvat;
