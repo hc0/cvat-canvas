@@ -22,7 +22,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].min.js',
-        publicPath: '/',
+        publicPath: '',
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -100,7 +100,7 @@ module.exports = {
                 use: {
                     loader: 'worker-loader',
                     options: {
-                        publicPath: '/',
+                        publicPath: '',
                         name: '3rdparty/[name].[contenthash].js',
                     },
                 },
@@ -111,7 +111,7 @@ module.exports = {
                 use: {
                     loader: 'worker-loader',
                     options: {
-                        publicPath: '/',
+                        publicPath: '',
                         name: '[name].[contenthash].js',
                     },
                 },
