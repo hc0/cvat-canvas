@@ -22,7 +22,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].min.js',
-        publicPath: '',
+        publicPath: '/',
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -30,6 +30,15 @@ module.exports = {
         inline: true,
         port: 3000,
         historyApiFallback: true,
+        proxy: {
+			'/api': {
+				target: 'http://62.234.128.194:30043',
+				changOrigin: true,    //是否开启代理
+				// pathRewrite: {
+				// 	'^/api': ''
+				// }
+			}
+		}
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
@@ -100,7 +109,7 @@ module.exports = {
                 use: {
                     loader: 'worker-loader',
                     options: {
-                        publicPath: '',
+                        publicPath: '/',
                         name: '3rdparty/[name].[contenthash].js',
                     },
                 },
@@ -111,7 +120,7 @@ module.exports = {
                 use: {
                     loader: 'worker-loader',
                     options: {
-                        publicPath: '',
+                        publicPath: '/',
                         name: '[name].[contenthash].js',
                     },
                 },
